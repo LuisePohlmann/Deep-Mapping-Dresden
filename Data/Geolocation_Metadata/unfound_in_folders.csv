@@ -1,0 +1,12 @@
+Entity|Type|Link|latitude|longitude|geocode_query|geocode_status
+Zeughaus|Location|https://de.wikipedia.org/wiki/Zeughaus_(Dresden)|52.5177477|13.3970225|Zeughaus|ok|014_1739_Eines_berühmten_Cavaliers_aus_Schlesien,_Curieuse_Reisen_durch_Europa,_in_welcher_allerhand_Merckwür|00000428.tif.original.csv
+Pfarrkirche|Location||48.0374495|14.4171422|Pfarrkirche|ok|014_1739_Eines_berühmten_Cavaliers_aus_Schlesien,_Curieuse_Reisen_durch_Europa,_in_welcher_allerhand_Merckwür|00000428.tif.original.csv
+Dresden|Location|https://de.wikipedia.org/wiki/Dresden|51.0493286|13.7381437|Dresden|ok|014_1739_Eines_berühmten_Cavaliers_aus_Schlesien,_Curieuse_Reisen_durch_Europa,_in_welcher_allerhand_Merckwür|00000433.tif.original.csv
+Herren- Markt|Location|https://de.wikipedia.org/wiki/Herrenmarkt_(Dresden)|50.7488757|6.1633666|Herren- Markt|ok|014_1739_Eines_berühmten_Cavaliers_aus_Schlesien,_Curieuse_Reisen_durch_Europa,_in_welcher_allerhand_Merckwür|00000436.tif.original.csv
+Zeughaus|Location|https://de.wikipedia.org/wiki/Zeughaus_(Dresden)|52.5177477|13.3970225|Zeughaus|ok|014_1739_Eines_berühmten_Cavaliers_aus_Schlesien,_Curieuse_Reisen_durch_Europa,_in_welcher_allerhand_Merckwür|00000436.tif.original.csv
+Kunst-Kammer|Location||48.3664911|10.8945258|Kunst-Kammer|ok|014_1739_Eines_berühmten_Cavaliers_aus_Schlesien,_Curieuse_Reisen_durch_Europa,_in_welcher_allerhand_Merckwür|00000436.tif.original.csv
+Jesuitenkirche|Location|https://de.wikipedia.org/wiki/Jesuitenkirche_(Dresden)|47.2684468|11.3979692|Jesuitenkirche|ok|035_1783_Herrn_G._E._von_R._Reise_von_Wien_nach_Böhmen_und_Sachsen,_im_May_1783|00000300.tif.original.csv
+Nikolaikirche|Location|https://de.wikipedia.org/wiki/Nikolaikirche_(Dresden)|59.4359214|24.742774|Nikolaikirche|ok|035_1783_Herrn_G._E._von_R._Reise_von_Wien_nach_Böhmen_und_Sachsen,_im_May_1783|00000300.tif.original.csv
+Altstadt|Location|https://de.wikipedia.org/wiki/Altstadt_(Dresden)|50.0842845|14.4178391|Altstadt|ok|035_1783_Herrn_G._E._von_R._Reise_von_Wien_nach_Böhmen_und_Sachsen,_im_May_1783|00000301.tif.original.csv
+Neustadt|Place|https://de.wikipedia.org/wiki/Dresden-Neustadt|49.3539802|8.1350021|Neustadt|ok|035_1783_Herrn_G._E._von_R._Reise_von_Wien_nach_Böhmen_und_Sachsen,_im_May_1783|00000302.tif.original.csv
+Pulvermühle|Location|https://de.wikipedia.org/wiki/Pulverm%C3%BChle_(Dresden)|49.6085184|6.150118|Pulvermühle|ok|051_1786_Briefe_über_Sachsen_von_einem_Reisenden|55.csv

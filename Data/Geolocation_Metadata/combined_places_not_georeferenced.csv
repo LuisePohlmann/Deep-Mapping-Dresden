@@ -1,0 +1,619 @@
+Entity;Type;Link;latitude;longitude;geocode_query;geocode_status;Subfolder;SourceFileStem
+Schwa Ben;Place;https://de.wikipedia.org/wiki/Schwaben;;;Schwa Ben;no_results;002_1586_Gründliche_vnd_warhafftige_beschreibung_Der_Löblichen_vnd_Ritterlichen_Reise_vnd_Meerfart_in_das_hei;23
+Hierusalemqsm;Location;;;;Hierusalemqsm;no_results;002_1586_Gründliche_vnd_warhafftige_beschreibung_Der_Löblichen_vnd_Ritterlichen_Reise_vnd_Meerfart_in_das_hei;24
+Herbipoli;Location;;;;Herbipoli;no_results;003_1604_Delitiarum_Germaniae,_tam_superioris_quam_inferioris,_Index_simul_&_viatorius,_indicans_Itinera_ex_A;299
+Egram;Location;;;;Egram;no_results;003_1604_Delitiarum_Germaniae,_tam_superioris_quam_inferioris,_Index_simul_&_viatorius,_indicans_Itinera_ex_A;299
+Darisra;Location;;;;Darisra;no_results;003_1604_Delitiarum_Germaniae,_tam_superioris_quam_inferioris,_Index_simul_&_viatorius,_indicans_Itinera_ex_A;299
+COSTLINVM;LOC;;;;COSTLINVM;no_results;005_1609_Deliciarum_Germaniae,_Tam_Superioris_Quam_Inferioris;285
+Ryfflant;LOC;;;;Ryfflant;no_results;005_1609_Deliciarum_Germaniae,_Tam_Superioris_Quam_Inferioris;285
+AufmBraet;LOC;;;;AufmBraet;no_results;005_1609_Deliciarum_Germaniae,_Tam_Superioris_Quam_Inferioris;285
+Zinhoven;LOC;;;;Zinhoven;no_results;005_1609_Deliciarum_Germaniae,_Tam_Superioris_Quam_Inferioris;285
+Salgast;Location;;;;Salgast;no_results;005_1609_Deliciarum_Germaniae,_Tam_Superioris_Quam_Inferioris;287
+Biberstorff;Location;;;;Biberstorff;no_results;005_1609_Deliciarum_Germaniae,_Tam_Superioris_Quam_Inferioris;287
+Zurf fehre;Location;;;;Zurf fehre;no_results;005_1609_Deliciarum_Germaniae,_Tam_Superioris_Quam_Inferioris;287
+Beskoff;Location;;;;Beskoff;no_results;005_1609_Deliciarum_Germaniae,_Tam_Superioris_Quam_Inferioris;287
+Boruf;Location;;;;Boruf;no_results;005_1609_Deliciarum_Germaniae,_Tam_Superioris_Quam_Inferioris;287
+Nifle;Location;;;;Nifle;no_results;006_1632_Itinerarium_Germaniae_Nov-Antiquae._Teutsches_Reyßbuch_durch_Hoch-_und_Nider-Teutschland_auch_angrän;387
+Miereis;Location;;;;Miereis;no_results;006_1632_Itinerarium_Germaniae_Nov-Antiquae._Teutsches_Reyßbuch_durch_Hoch-_und_Nider-Teutschland_auch_angrän;387
+Laf Oakland;Location;;;;Laf Oakland;no_results;006_1632_Itinerarium_Germaniae_Nov-Antiquae._Teutsches_Reyßbuch_durch_Hoch-_und_Nider-Teutschland_auch_angrän;390
+Kurfürstentum Sachsen;Location;https://de.wikipedia.org/wiki/Kurfürstentum_Sachsen;;;Kurfürstentum Sachsen;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1004
+Ringmauer (Dresden);Location;https://de.wikipedia.org/wiki/Stadtmauer_(Dresden);;;Ringmauer (Dresden);no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1004
+Herzogthum Zutlich;Location;;;;Herzogtum Zittau;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1006
+Landgrafschaft Thüringen;Location;https://de.wikipedia.org/wiki/Landgrafschaft_Th%C3%BCringen;;;Landgrafschaft Thüringen;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1006
+Markgrafschaft Meissen;Location;https://de.wikipedia.org/wiki/Markgrafschaft_Mei%C3%9Fen;;;Markgrafschaft Meißen;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1006
+Marckgraffschaft Ober- Laufeniz;Location;https://de.wikipedia.org/wiki/Laufnitz;;;Markgrafschaft Oberlausitz;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1007
+Marckgraffschaft Nieder- Laufeniz;Location;;;;Markgrafschaft Niederlausitz;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1007
+Arafaffaft Marck;Location;;;;Markgrafschaft;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1007
+RiesenSaal;Location;https://de.wikipedia.org/wiki/Riesensaal_(Dresden);;;Riesensaal;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1010
+Churfürstliche Guardarobba;Location;;;;Kurfürstliche Garderobe;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1011
+Kurfürstliche Festungen;Location;;;;Kurfürstliche Festungen;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1011
+Erbländer;Location;;;;Erbländer;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1011
+Zierathen;Location;https://de.wikipedia.org/wiki/Zierathen;;;Zierathen;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1013
+Portkirchen;Location;;;;Portkirchen;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1013
+Sächsischen Stammen;Location;https://de.wikipedia.org/wiki/S%C3%A4chsische_St%C3%A4mme;;;Sächsische Stämme;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1026
+Churfürstliche Zeughauβ;Location;https://de.wikipedia.org/wiki/Churf%C3%BCrstliches_Zeughaus_(Dresden);;;Kurfürstlicher Zeughof;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1035
+Anatomie Kammer;Location;;;;Anatomische Kammer;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1039
+Zage S. Vei;Location;;;;Zage S. Vei;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1052
+Kirch-Thore;Location;;;;Kirch-Thore;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1055
+Frauenzüñen;Location;;;;Frauenzüñen;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1062
+Churfürstinnengarten;Location;;;;Kurfürstinnengarten;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1063
+Zinsendorffer Garten;Location;;;;Zinzendorfer Garten;no_results;008_1690_Denckwürdige_Reisebeschreibung_durch_Deutschland,_Italien,_Spanien,_Portugall,_Engeland,_Franckreich;1064
+Dinkelispiel;Location;;;;Dinkelispiel;no_results;009_1706_Die_vornehmsten_europäischen_Reisen,_wie_solche_durch_Deutschland,_Franckreich,_Italien,_Holl-und_En;00000056.tif.original
+Dwarsdorff;Location;;;;Dwarsdorff;no_results;009_1706_Die_vornehmsten_europäischen_Reisen,_wie_solche_durch_Deutschland,_Franckreich,_Italien,_Holl-und_En;00000056.tif.original
+Dockum;Location;;;;Dockum;no_results;009_1706_Die_vornehmsten_europäischen_Reisen,_wie_solche_durch_Deutschland,_Franckreich,_Italien,_Holl-und_En;00000056.tif.original
+Espernay;Location;;;;Espernay;no_results;009_1706_Die_vornehmsten_europäischen_Reisen,_wie_solche_durch_Deutschland,_Franckreich,_Italien,_Holl-und_En;00000056.tif.original
+Ekezid;Location;;;;Ekezid;no_results;009_1706_Die_vornehmsten_europäischen_Reisen,_wie_solche_durch_Deutschland,_Franckreich,_Italien,_Holl-und_En;00000056.tif.original
+Frauncker;Location;;;;Frauncker;no_results;009_1706_Die_vornehmsten_europäischen_Reisen,_wie_solche_durch_Deutschland,_Franckreich,_Italien,_Holl-und_En;00000056.tif.original
+Freyssingen;Location;;;;Freyssingen;no_results;009_1706_Die_vornehmsten_europäischen_Reisen,_wie_solche_durch_Deutschland,_Franckreich,_Italien,_Holl-und_En;00000056.tif.original
+Gondesberg;Location;;;;Gondesberg;no_results;009_1706_Die_vornehmsten_europäischen_Reisen,_wie_solche_durch_Deutschland,_Franckreich,_Italien,_Holl-und_En;00000057.tif.original
+Gorckum;Location;;;;Gorckum;no_results;009_1706_Die_vornehmsten_europäischen_Reisen,_wie_solche_durch_Deutschland,_Franckreich,_Italien,_Holl-und_En;00000057.tif.original
+Gordouan;Location;;;;Gordouan;no_results;009_1706_Die_vornehmsten_europäischen_Reisen,_wie_solche_durch_Deutschland,_Franckreich,_Italien,_Holl-und_En;00000057.tif.original
+Grotkau;Location;https://de.wikipedia.org/wiki/Grotkau;;;Grotkau;no_results;009_1706_Die_vornehmsten_europäischen_Reisen,_wie_solche_durch_Deutschland,_Franckreich,_Italien,_Holl-und_En;00000057.tif.original
+Harderwick;Location;;;;Harderwitz;no_results;009_1706_Die_vornehmsten_europäischen_Reisen,_wie_solche_durch_Deutschland,_Franckreich,_Italien,_Holl-und_En;00000057.tif.original
+Helsiz;Location;;;;Helsiz;no_results;009_1706_Die_vornehmsten_europäischen_Reisen,_wie_solche_durch_Deutschland,_Franckreich,_Italien,_Holl-und_En;00000057.tif.original
+Littenbaum;Location;;;;Littenbaum;no_results;011_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000534.tif.original
+Bosphische Gränze;Location;;;;Böhmische Grenze;no_results;011_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000535.tif.original
+Pirnischen Thor;Location;;;;Pirnaischer Tor;no_results;011_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000535.tif.original
+Dening Mauern;Location;;;;Dening Mauern;no_results;011_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000535.tif.original
+Podendorff;Location;;;;Podendorff;no_results;011_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000535.tif.original
+Olppol;Location;;;;Olppol;no_results;011_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000535.tif.original
+Chursfuelin;Location;;;;Chursfuelin;no_results;011_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000535.tif.original
+Maundorff;Location;https://de.wikipedia.org/wiki/Maundorf_(Dresden);;;Mauendorf;no_results;011_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000538.tif.original
+Böhmische Grenze;Location;;;;Böhmische Grenze;no_results;011_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000538.tif.original
+Zinwwald;Location;;;;Zinwwald;no_results;011_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000538.tif.original
+Wesenstein;Location;https://de.wikipedia.org/wiki/Wesenstein_(Sachsen);;;Wesenstein;no_results;011_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000539.tif.original
+Böhmische Grenze;Location;https://de.wikipedia.org/wiki/Böhmische_Grenze;;;Böhmische Grenze;no_results;011_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000540.tif.original
+Pémna;Location;;;;Pémna;no_results;011_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000541.tif.original
+Wesenstein;Location;https://de.wikipedia.org/wiki/Wesenstein_(Sachsen);;;Wesenstein;no_results;011_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000542.tif.original
+Böhmischen Grenzen;Location;;;;Böhmische Grenze;no_results;011_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000544.tif.original
+Gavin‑Hütte;Location;;;;Gavin‑Hütte;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000462.tif.original
+Mehffen;Location;;;;Mehffen;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000464.tif.original
+Ctleisa;Location;;;;Ctleisa;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000464.tif.original
+Meissnische Inspection;Location;https://de.wikipedia.org/wiki/Meißnische_Inspektion;;;Meißnische Inspektion;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000465.tif.original
+Kommaßsch;Location;;;;Kommaßsch;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000465.tif.original
+Rufflicz;Location;;;;Rufflicz;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000466.tif.original
+Milcicz;Location;;;;Milcicz;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000467.tif.original
+Planckstein;Location;;;;Planckstein;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000468.tif.original
+Burckhardswalda;Location;;;;Burkhardtswalde;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000468.tif.original
+Neu- Tanneberg;Location;;;;Neu- Tanneberg;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000470.tif.original
+Bichteng-Wald;Location;;;;Bichteng-Wald;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000470.tif.original
+Vörder-Gersdorff;Location;;;;Vörder-Gersdorff;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000473.tif.original
+GleichLocl表态;Location;;;;GleichLocl表态;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000473.tif.original
+Erincr-Gersdorff;Location;;;;Erincr-Gersdorff;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000473.tif.original
+Somduck;Location;;;;Somduck;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000473.tif.original
+Cbarant;Location;;;;Cbarant;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000473.tif.original
+Orillenburg;Location;;;;Orillenburg;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000473.tif.original
+Edlenau;Location;;;;Edlenau;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000473.tif.original
+Weiferis;Location;;;;Weiferis;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000473.tif.original
+Groß‑striz;Location;https://de.wikipedia.org/wiki/Gro%C3%9Fschr%C3%B6ditz;;;Groß‑striz;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000474.tif.original
+Clarren‑burg;Location;;;;Clarren‑burg;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000474.tif.original
+Vestervitz;Location;https://de.wikipedia.org/wiki/Westerwitz;;;Westerwitz;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000474.tif.original
+Untertha i nen;Location;;;;Untertha i nen;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000474.tif.original
+ZuMERckef;Location;;;;ZuMERckef;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000474.tif.original
+Besterwitz;Location;https://de.wikipedia.org/wiki/Besterwitz;;;Besterwitz;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000475.tif.original
+Zuckeroda;Location;;;;Zuckeroda;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000475.tif.original
+Klein‑Öping;Location;;;;Kleinpöppeln;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000475.tif.original
+Bvdnerich;Location;;;;Bvdnerich;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000476.tif.original
+Mersfen;Location;;;;Mersfen;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000476.tif.original
+Brceffen;Location;;;;Brceffen;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000476.tif.original
+Rostebauda;Location;;;;Rostebauda;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000477.tif.original
+Weisctropp;Location;;;;Weisctropp;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000477.tif.original
+Kögschenbroda;Location;;;;Köschener Broda;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000477.tif.original
+Kadeburg;Location;;;;Kadeburg;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000477.tif.original
+Dresdner Ober-Amt;Location;;;;Dresdner Oberamt;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000478.tif.original
+Westerwitz;Location;https://de.wikipedia.org/wiki/Westerwitz;;;Westerwitz;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000478.tif.original
+Corbiz;Location;;;;Cöritz;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000478.tif.original
+Pirnischen Thor;Location;https://de.wikipedia.org/wiki/Pirnaer_Tor;;;Pirnaischer Tor;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000483.tif.original
+Wilßdruffer;Location;;;;Wilßdruffer;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000483.tif.original
+Pirnischen Gasse;Location;;;;Pirnaische Gasse;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000487.tif.original
+Auerbachticm Boigt Lande;Location;;;;Auerbacher Bucht;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000488.tif.original
+Plauische Gasse;Location;;;;Plauische Gasse;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000493.tif.original
+Wilßdruffer Thor;Location;;;;Wilßdruffer Thor;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000493.tif.original
+Sächsischen Ländern;Location;;;;Sächsisches Land;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000497.tif.original
+Thrigen;Location;;;;Thrigen;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000497.tif.original
+Dreßdennischen Zeug‑Haus;Location;https://de.wikipedia.org/wiki/Zeughaus_(Dresden);;;Dresdner Zeughaus;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000499.tif.original
+Couffre;Location;;;;Couffre;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000504.tif.original
+Pirnaische Gasse;Location;https://de.wikipedia.org/wiki/Pirnaische_Gasse;;;Pirnaische Gasse;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000513.tif.original
+Perls- Schencke;Location;;;;Perlschenke;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000513.tif.original
+Königsteel;Location;;;;Königsteig;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000515.tif.original
+Güftigelk;Location;;;;Güftigelk;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000515.tif.original
+Baarrschajft;Location;;;;Baarrschajft;no_results;012_1735_Curieuse_Reise-Beschreibung_des_Herrn_Androphili;00000515.tif.original
+Churfürstentum Sachsen;Location;https://de.wikipedia.org/wiki/Kurfürstentum_Sachsen;;;Kurfürstentum Sachsen;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;140
+Drethren;Location;;;;Drethren;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;140
+Kurfürstentum Sachsen;Location;https://de.wikipedia.org/wiki/Kurfürstentum_Sachsen;;;Kurfürstentum Sachsen;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;142
+Schloss Kirche der Churfürsten von Sachsen;Location;https://de.wikipedia.org/wiki/Schlosskirche_(Dresden);;;Schlosskirche der Kurfürsten von Sachsen;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;143
+Königliche Schatz‑Kstoff;Location;https://de.wikipedia.org/wiki/Grünes_Gewölbe;;;Königlicher Schatzkeller;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;143
+Jühlische Haus;Location;https://de.wikipedia.org/wiki/J%C3%BClichisches_Haus;;;Jühlische Haus;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;145
+Gouvernements‑Haus;Location;;;;Gouvernementshaus;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;146
+Hoymelische Haus;Location;;;;Hoymelische Haus;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;147
+Roniteum;Location;;;;Roniteum;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;147
+Haedeile;Location;;;;Haedeile;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;147
+Hoymbisches Haus;Location;;;;Hoymbisches Haus;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;148
+Türkischer Palast;Location;https://de.wikipedia.org/wiki/T%C3%BCrkischer_Pavillon_(Dresden);;;Türkischer Palast;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;149
+Chartz;Location;;;;Chartz;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;155
+Brandenburg‑Bayreuth;Location;https://de.wikipedia.org/wiki/Markgrafschaft_Brandenburg-Bayreuth;;;Brandenburg-Bayreuth;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;157
+Preßsch;Location;;;;Preßsch;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;157
+Polnichen;Location;;;;Polnichen;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;157
+Pommerisch-Preußen;Place;https://de.wikipedia.org/wiki/Pommern;;;Pommern/Preußen;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;170
+Brebentau;Location;;;;Brebentau;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;180
+Chur‑Sachsen;Location;https://de.wikipedia.org/wiki/Kurfürstentum_Sachsen;;;Chur‑Sachsen;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;186
+Pommerisch‑Preussen;Location;https://de.wikipedia.org/wiki/Pommern;;;Pommern/Preußen;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;187
+Brebentau;Location;https://de.wikipedia.org/wiki/Brebentau;;;Brebentau;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;188
+Weywoden;Location;;;;Weywoden;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;188
+Clischhoff;Location;;;;Clischhoff;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;188
+Chur‑Sächsischen;Location;https://de.wikipedia.org/wiki/Kurfürstentum_Sachsen;;;Chur‑Sächsischen;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;189
+Brieste;Location;;;;Brieste;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;190
+Pultovva;Location;;;;Pultovva;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;190
+Preffen;Location;;;;Preffen;no_results;013_1738_Briefe,_welche_das_Merkwürdigste_von_seinen_Reisen_und_die_Eigenschaften_derjenigen_Personen,_woraus;194
+Dörfelspiel;Location;;;;Dörfelspiel;no_results;014_1739_Eines_berühmten_Cavaliers_aus_Schlesien,_Curieuse_Reisen_durch_Europa,_in_welcher_allerhand_Merckwür;00000430.tif.original
+Ring - Mauren;Location;;;;Ring - Mauren;no_results;014_1739_Eines_berühmten_Cavaliers_aus_Schlesien,_Curieuse_Reisen_durch_Europa,_in_welcher_allerhand_Merckwür;00000431.tif.original
+Proviant-Häusern;Location;https://de.wikipedia.org/wiki/Provianthaus;;;Provianthäuser;no_results;014_1739_Eines_berühmten_Cavaliers_aus_Schlesien,_Curieuse_Reisen_durch_Europa,_in_welcher_allerhand_Merckwür;00000436.tif.original
+Alt‑ und Neu‑Dresden;Location;https://de.wikipedia.org/wiki/Dresden;;;Alt- und Neu-Dresden;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1053
+Florentinischer;Location;;;;Florentinischer;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1056
+Walzisch;Location;;;;Walzisch;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1056
+Bayrischten Schazes;Location;;;;Bayerischen Schätze;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1058
+Feinbergifchen;Location;;;;Feinbergifchen;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1058
+Audienzsaal;Location;https://de.wikipedia.org/wiki/Residenzschloss_Dresden#Audienzsaal;;;Audienzsaal;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1060
+Animalien‑Galerie;Location;;;;Animalien-Galerie;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1067
+Freiherrliche Gut W.;Location;;;;Freiherrliches Gut W.;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1067
+Puozzolì;Location;;;;Puozzolì;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1070
+Schweiladingen;Location;;;;Schweidlingen;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1070
+Westindische Inseln;Location;https://de.wikipedia.org/wiki/Westindische_Inseln;;;Westindische Inseln;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1071
+Ostindien;Location;https://de.wikipedia.org/wiki/Ostindien;;;Ostindien;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1071
+Dromedarium;Location;;;;Dromedarium;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1073
+Zwinger‑Gebäude;Location;https://de.wikipedia.org/wiki/Zwinger_(Dresden);;;Zwinger-Gebäude;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1076
+Marmor‑ oder Tanz‑Saal;Location;;;;Marmor- oder Tanzsaal;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1076
+Tempel Salomonis;Location;;;;Tempel Salomonis;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1076
+Canmern;Location;;;;Canmern;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1078
+Trajani Columna;Location;;;;Trajani Columna;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1078
+Pfug;Location;;;;Pfug;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1079
+Cröumingen;Location;;;;Cröumingen;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1082
+Herzog zu Florenz;Location;;;;Herzog zu Florenz;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1083
+Francreich;Location;;;;Francreich;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1083
+Maas‑Stabe;Location;;;;Maas‑Stabe;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1084
+Königs Keller;Location;;;;Königskeller (Dresden);no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1084
+Plauisches Tor;Location;https://de.wikipedia.org/wiki/Plauisches_Tor;;;Plauisches Tor;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1087
+Tschirnhausen;Location;https://de.wikipedia.org/wiki/Tschirnhausen_(Sachsen);;;Tschirnhausen;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1089
+Polir-Mußle;Location;;;;Polir-Mußle;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1089
+Polirs‑Mühle;Location;;;;Polirs‑Mühle;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1090
+Chur‑Sächsischen Lande;Location;;;;Chur‑Sächsischen Lande;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1090
+Luberach;Location;https://de.wikipedia.org/wiki/L%C3%BCbrach;;;Luberach;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1091
+Zeithayn;Location;;;;Zeithayn;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1094
+Schwemssel;Location;;;;Schwemssel;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1095
+Wiesenbade;Location;;;;Wiesenbade;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1095
+Wroughtendorff;Location;;;;Wroughtendorff;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1095
+Kalchgrun;Location;;;;Kalchgrun;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1095
+Bussendorff;Location;;;;Bussendorf;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1095
+Uederau;Location;;;;Uederau;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1095
+Zeisrenfriedersdorff;Location;;;;Zeisrenfriedersdorff;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1096
+Zobutz;Location;;;;Zobitz;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1096
+Porschenstein;Location;;;;Porschenstein;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1096
+Waldenburg (Erzgebirge);Location;https://de.wikipedia.org/wiki/Waldenburg_(Sachsen);;;Waldenburg (Erzgebirge);no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1096
+Gersingswalda;Location;;;;Gersingswalda;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1097
+Ober‑Läufniざ;Location;;;;Oberlauffnitz;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1097
+Eaubegast;Location;;;;Eaubegast;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1097
+Mitwenda;Location;;;;Mitwenda;no_results;015_1740_Neueste_Reisen_durch_Deutschland,_Böhmen,_Ungarn,_die_Schweitz,_Italien_und_Lothringen;1097
+Aeuergärt;Location;;;;Auergarten;no_results;017_1741_Anmerckungen_derer_Auf_meiner_Sächsischen_Reysse_gesehenen_Merckwürdigkeiten_Wie_ich_solche_an_unter;00000048.tif.original
+Soauns;Location;;;;Soauns;no_results;017_1741_Anmerckungen_derer_Auf_meiner_Sächsischen_Reysse_gesehenen_Merckwürdigkeiten_Wie_ich_solche_an_unter;00000048.tif.original
+Muúms;Location;;;;Muúms;no_results;017_1741_Anmerckungen_derer_Auf_meiner_Sächsischen_Reysse_gesehenen_Merckwürdigkeiten_Wie_ich_solche_an_unter;00000048.tif.original
+Wermarta;Location;;;;Wermarta;no_results;017_1741_Anmerckungen_derer_Auf_meiner_Sächsischen_Reysse_gesehenen_Merckwürdigkeiten_Wie_ich_solche_an_unter;00000048.tif.original
+Fräyberg;Location;;;;Fräyberg;no_results;017_1741_Anmerckungen_derer_Auf_meiner_Sächsischen_Reysse_gesehenen_Merckwürdigkeiten_Wie_ich_solche_an_unter;00000049.tif.original
+Lapplte;Location;;;;Lapplte;no_results;017_1741_Anmerckungen_derer_Auf_meiner_Sächsischen_Reysse_gesehenen_Merckwürdigkeiten_Wie_ich_solche_an_unter;00000050.tif.original
+Landaeben;Location;;;;Landaeben;no_results;017_1741_Anmerckungen_derer_Auf_meiner_Sächsischen_Reysse_gesehenen_Merckwürdigkeiten_Wie_ich_solche_an_unter;00000050.tif.original
+Schlackenwerda;Location;https://de.wikipedia.org/wiki/Schlackenwerda;;;Schlackenwerda;no_results;026_1780_Freundschaftliche_Nachrichten_von_einer_Carlsbader_Brunnenreise;00000090.tif.original
+Gottessgabe;Location;;;;Gottessgabe;no_results;026_1780_Freundschaftliche_Nachrichten_von_einer_Carlsbader_Brunnenreise;00000090.tif.original
+Joachimsthalerberg;Location;;;;Joachimsthaler Berg;no_results;026_1780_Freundschaftliche_Nachrichten_von_einer_Carlsbader_Brunnenreise;00000091.tif.original
+Brentzlant;Location;;;;Brentzlant;no_results;027_1780_Emanuel_Hartensteins,_eines_perigrinirenden_Weltbürgers,_Reise_von_Berlin_über_Rostock_nach_Dreßden;161
+Metznig;Location;;;;Metznig;no_results;029_1782_Tagebuch_einer_gelehrten_Reise_1750_durch_einen_Theil_von_Ober-_und_Nieder-Sachsen;00000015.tif.original
+Ersurth;Location;;;;Ersurth;no_results;029_1782_Tagebuch_einer_gelehrten_Reise_1750_durch_einen_Theil_von_Ober-_und_Nieder-Sachsen;00000015.tif.original
+WBlankburg;Location;;;;WBlankburg;no_results;029_1782_Tagebuch_einer_gelehrten_Reise_1750_durch_einen_Theil_von_Ober-_und_Nieder-Sachsen;00000015.tif.original
+Salzgahlen;Location;;;;Salzgahlen;no_results;029_1782_Tagebuch_einer_gelehrten_Reise_1750_durch_einen_Theil_von_Ober-_und_Nieder-Sachsen;00000015.tif.original
+Hämstedt;Location;https://de.wikipedia.org/wiki/Hämstedt_(Beverstedt);;;Hämstett;no_results;029_1782_Tagebuch_einer_gelehrten_Reise_1750_durch_einen_Theil_von_Ober-_und_Nieder-Sachsen;00000015.tif.original
+Treuen‑brieten;Location;;;;Treuen‑brieten;no_results;029_1782_Tagebuch_einer_gelehrten_Reise_1750_durch_einen_Theil_von_Ober-_und_Nieder-Sachsen;00000017.tif.original
+Electoratum Brandenburg;Location;https://de.wikipedia.org/wiki/Markgrafschaft_Brandenburg;;;Electorate of Brandenburg;no_results;029_1782_Tagebuch_einer_gelehrten_Reise_1750_durch_einen_Theil_von_Ober-_und_Nieder-Sachsen;00000022.tif.original
+Kurfürstische Palais;Location;;;;Kurfürstliches Palais (Dresden);no_results;029_1782_Tagebuch_einer_gelehrten_Reise_1750_durch_einen_Theil_von_Ober-_und_Nieder-Sachsen;00000026.tif.original
+Churprinzen Palais;Location;;;;Kurfürsten Palais;no_results;029_1782_Tagebuch_einer_gelehrten_Reise_1750_durch_einen_Theil_von_Ober-_und_Nieder-Sachsen;00000026.tif.original
+Burggrαsthum Magdeburg;Location;;;;Burggrαsthum Magdeburg;no_results;029_1782_Tagebuch_einer_gelehrten_Reise_1750_durch_einen_Theil_von_Ober-_und_Nieder-Sachsen;00000027.tif.original
+Rfnigftein;Location;;;;Rfnigftein;no_results;029_1782_Tagebuch_einer_gelehrten_Reise_1750_durch_einen_Theil_von_Ober-_und_Nieder-Sachsen;00000027.tif.original
+Voigtändischen;Location;;;;Voigtändischen;no_results;029_1782_Tagebuch_einer_gelehrten_Reise_1750_durch_einen_Theil_von_Ober-_und_Nieder-Sachsen;00000030.tif.original
+Königl. Jagdschloß Moritzburg;Location;https://de.wikipedia.org/wiki/Schloss_Moritzburg;;;Jagdschloss Moritzburg;no_results;029_1782_Tagebuch_einer_gelehrten_Reise_1750_durch_einen_Theil_von_Ober-_und_Nieder-Sachsen;00000030.tif.original
+Churfürstliche Schloß;Location;https://de.wikipedia.org/wiki/Residenzschloss_(Dresden);;;Kurfürstliches Schloss (Dresden);no_results;031_1782_Bemerkungen_über_verschiedene_Gegenstände_auf_einer_Reise_durch_einige_deutsche_Provinzen;171
+Grottenwerke;Location;;;;Grottenwerk (Dresden);no_results;031_1782_Bemerkungen_über_verschiedene_Gegenstände_auf_einer_Reise_durch_einige_deutsche_Provinzen;171
+Schloßthurm;Location;;;;Schloßthurm;no_results;031_1782_Bemerkungen_über_verschiedene_Gegenstände_auf_einer_Reise_durch_einige_deutsche_Provinzen;175
+Brühl'sches Palais (Gräflich Brühlschen Palais);Location;https://de.wikipedia.org/wiki/Br%C3%BChlsches_Palais;;;Brühlsches Palais (Dresden);no_results;031_1782_Bemerkungen_über_verschiedene_Gegenstände_auf_einer_Reise_durch_einige_deutsche_Provinzen;184
+Churfürstlichen Garten;Location;https://de.wikipedia.org/wiki/Gro%C3%9Fer_Garten_(Dresden);;;Kurfürstlicher Garten (Dresden);no_results;031_1782_Bemerkungen_über_verschiedene_Gegenstände_auf_einer_Reise_durch_einige_deutsche_Provinzen;186
+Kurfürstlicher Garten;Location;https://de.wikipedia.org/wiki/Kurfürstlicher_Garten_(Dresden);;;Kurfürstlicher Garten (Dresden);no_results;031_1782_Bemerkungen_über_verschiedene_Gegenstände_auf_einer_Reise_durch_einige_deutsche_Provinzen;189
+Moschinskischer Garten;Location;https://de.wikipedia.org/wiki/Moschinskischer_Garten;;;Moschinskischer Garten;no_results;031_1782_Bemerkungen_über_verschiedene_Gegenstände_auf_einer_Reise_durch_einige_deutsche_Provinzen;190
+Pauischer Grund;Location;;;;Pauischer Grund;no_results;031_1782_Bemerkungen_über_verschiedene_Gegenstände_auf_einer_Reise_durch_einige_deutsche_Provinzen;191
+Neuen Markte;Location;https://de.wikipedia.org/wiki/Neumarkt_(Dresden);;;Neuer Markt (Dresden);no_results;031_1782_Bemerkungen_über_verschiedene_Gegenstände_auf_einer_Reise_durch_einige_deutsche_Provinzen;192
+Churfürstliche Schloß Nebigau;Location;;;;Churfürstliche Schloß Nebigau;no_results;031_1782_Bemerkungen_über_verschiedene_Gegenstände_auf_einer_Reise_durch_einige_deutsche_Provinzen;201
+Lechengroβe;Location;;;;Lechen Grube;no_results;031_1782_Bemerkungen_über_verschiedene_Gegenstände_auf_einer_Reise_durch_einige_deutsche_Provinzen;201
+Churfürstliches Lustschloss Pillnitz;Location;https://de.wikipedia.org/wiki/Schloss_Pillnitz;;;Lustschloss Pillnitz;no_results;031_1782_Bemerkungen_über_verschiedene_Gegenstände_auf_einer_Reise_durch_einige_deutsche_Provinzen;202
+Marmorhütte;Location;;;;Marmorhütte (Pirna);no_results;031_1782_Bemerkungen_über_verschiedene_Gegenstände_auf_einer_Reise_durch_einige_deutsche_Provinzen;202
+Plauischer Grund;Location;https://de.wikipedia.org/wiki/Plauischer_Grund;;;Plauischer Grund;no_results;031_1782_Bemerkungen_über_verschiedene_Gegenstände_auf_einer_Reise_durch_einige_deutsche_Provinzen;203
+Schloßthurme;Location;;;;Schloßthurme;no_results;031_1782_Bemerkungen_über_verschiedene_Gegenstände_auf_einer_Reise_durch_einige_deutsche_Provinzen;206
+Tillerstein;Location;;;;Tillerstein;no_results;032_1782_Reise_von_Dresden_nach_Teplitz_in_Böhmen;29
+Thunische Paallast;Location;;;;Thürnisches Palais;no_results;035_1783_Herrn_G._E._von_R._Reise_von_Wien_nach_Böhmen_und_Sachsen,_im_May_1783;00000300.tif.original
+Martinizische;Location;;;;Martinizische;no_results;035_1783_Herrn_G._E._von_R._Reise_von_Wien_nach_Böhmen_und_Sachsen,_im_May_1783;00000300.tif.original
+Grafen Runitz Pallaus;Location;;;;Grafen Runitz Pallaus;no_results;035_1783_Herrn_G._E._von_R._Reise_von_Wien_nach_Böhmen_und_Sachsen,_im_May_1783;00000303.tif.original
+Grafen Clam Pallast;Location;;;;Grafenclau Palais;no_results;035_1783_Herrn_G._E._von_R._Reise_von_Wien_nach_Böhmen_und_Sachsen,_im_May_1783;00000303.tif.original
+Fürsten v. Mansfeld Pallast;Location;;;;Fürsten von Mansfeld Palais;no_results;035_1783_Herrn_G._E._von_R._Reise_von_Wien_nach_Böhmen_und_Sachsen,_im_May_1783;00000304.tif.original
+Rinsky Pallast;Location;;;;Rinsky Pallast;no_results;035_1783_Herrn_G._E._von_R._Reise_von_Wien_nach_Böhmen_und_Sachsen,_im_May_1783;00000304.tif.original
+Graf des Foursche Palais;Location;;;;Graf des Fürsten Palais;no_results;035_1783_Herrn_G._E._von_R._Reise_von_Wien_nach_Böhmen_und_Sachsen,_im_May_1783;00000304.tif.original
+Leutmeritzer Kreis;Location;;;;Leuteritz Kreis;no_results;035_1783_Herrn_G._E._von_R._Reise_von_Wien_nach_Böhmen_und_Sachsen,_im_May_1783;00000304.tif.original
+Boksshsaten;Location;;;;Boksshsaten;no_results;036_1783_Briefe_eines_reisenden_Franzosen_über_Deutschland._An_seinen_Bruder_zu_Paris;6
+Dänemer;Location;https://de.wikipedia.org/wiki/D%C3%A4nemark;;;Dänemer;no_results;046_1785_Beschreibung_seiner_Reise_durch_Ober-_und_Nieder-Sachsen_und_Hessen;00000115.tif.original
+Churkreis;Location;https://de.wikipedia.org/wiki/Kirchenkreis_Dresden;;;Churkreis;no_results;046_1785_Beschreibung_seiner_Reise_durch_Ober-_und_Nieder-Sachsen_und_Hessen;00000117.tif.original
+Koseldorf;Location;;;;Köseldorf;no_results;046_1785_Beschreibung_seiner_Reise_durch_Ober-_und_Nieder-Sachsen_und_Hessen;00000120.tif.original
+Lochauer Wald;Location;;;;Lößnau Wald;no_results;046_1785_Beschreibung_seiner_Reise_durch_Ober-_und_Nieder-Sachsen_und_Hessen;00000120.tif.original
+Sulkowski Palais;Location;https://de.wikipedia.org/wiki/Palais_Sulkowski;;;Sulkowski Palais;no_results;046_1785_Beschreibung_seiner_Reise_durch_Ober-_und_Nieder-Sachsen_und_Hessen;00000126.tif.original
+Lubomirski Palais;Location;;;;Lubomirski Palais;no_results;046_1785_Beschreibung_seiner_Reise_durch_Ober-_und_Nieder-Sachsen_und_Hessen;00000126.tif.original
+Palais des Chevalier de Saxe;Location;;;;Palais des Chevalier de Saxe;no_results;046_1785_Beschreibung_seiner_Reise_durch_Ober-_und_Nieder-Sachsen_und_Hessen;00000126.tif.original
+Wallche;Location;;;;Wallche;no_results;046_1785_Beschreibung_seiner_Reise_durch_Ober-_und_Nieder-Sachsen_und_Hessen;00000127.tif.original
+Mineraliengallerie;Location;;;;Mineralien-Galerie;no_results;046_1785_Beschreibung_seiner_Reise_durch_Ober-_und_Nieder-Sachsen_und_Hessen;00000133.tif.original
+Kupferstichsaal;Location;;;;Kupferstichsaal;no_results;046_1785_Beschreibung_seiner_Reise_durch_Ober-_und_Nieder-Sachsen_und_Hessen;00000133.tif.original
+Conchylienkabinett;Location;https://de.wikipedia.org/wiki/Conchylienkabinett;;;Conchylienkabinett;no_results;046_1785_Beschreibung_seiner_Reise_durch_Ober-_und_Nieder-Sachsen_und_Hessen;00000138.tif.original
+Wergrücken;Location;;;;Wergrücken;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;142
+Queergassen;Location;;;;Quer Gassen;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;147
+Kaizbach;Location;;;;Kaisbach;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;147
+Neustädter‑Hauptwacht;Location;https://de.wikipedia.org/wiki/Neustädter_Hauptwacht;;;Neustädter Hauptwacht;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;151
+Spitzruthen;Location;;;;Spitzruthen;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;152
+Kurfürstentum Sachsen;Location;https://de.wikipedia.org/wiki/Kurf%C3%BCrstentum_Sachsen;;;Kurfürstentum Sachsen;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;152
+Wilsdrufer Vorstadt;Location;https://de.wikipedia.org/wiki/Wilsdruffer_Vorstadt;;;Wilsdrufer Vorstadt;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;154
+Falkenschlage;Location;;;;Falkenschlage;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;154
+Weisserix;Location;;;;Weisserix;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;154
+Weifferitz;Location;;;;Weifferitz;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;155
+Allee in der Neustadt;Location;;;;Allee in der Neustadt;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;157
+Garten der Gräfin Murinska;Location;;;;Garten der Gräfin Murinska;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;157
+Rieschens Garten;Location;;;;Rieschen Garten;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;157
+Uri‑gau;Location;;;;Uri‑gau;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;158
+Naumannischer Weinberg;Location;https://de.wikipedia.org/wiki/Naumann%27scher_Weinberg;;;Naumannischer Weinberg;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;162
+Neitschitz;Location;;;;Neitschütz;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;164
+Parthien;Location;;;;Parthien;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;167
+Spitzruthen-Execution;Location;;;;Spitzruthen-Execution;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;177
+preußischen Staaten;Location;https://de.wikipedia.org/wiki/Preußische_Staaten;;;preußischen Staaten;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;183
+kursächsische Länder;Location;;;;kursächsische Länder;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;183
+Kurfachaen;Location;;;;Kurfachaen;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;197
+See-Thore;Location;;;;See-Thore;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;212
+Kasfen;Location;;;;Kasfen;no_results;049_1786_Kleine_Wanderungen_durch_Teutschland;216
+Plauischer Grund;Location;https://de.wikipedia.org/wiki/Plauischer_Grund;;;Plauischer Grund;no_results;050_1786_Briefe_über_Sachsen_von_einem_Reisenden;59
+Hr. Mo schinskys Garden;Location;;;;Moschinskys Garten;no_results;050_1786_Briefe_über_Sachsen_von_einem_Reisenden;60
+Borsstäden;Location;;;;Borsstäden;no_results;050_1786_Briefe_über_Sachsen_von_einem_Reisenden;61
+Italienische Oper;Location;https://de.wikipedia.org/wiki/Italienisches_Opernhaus_(Dresden);;;Italienische Oper (Dresden);no_results;050_1786_Briefe_über_Sachsen_von_einem_Reisenden;63
+Ockeritzer Mühle;Location;https://de.wikipedia.org/wiki/Ockeritzer_Mühle;;;Ockeritzer Mühle;no_results;051_1786_Briefe_über_Sachsen_von_einem_Reisenden;54
+Plauischer Grund;Location;https://de.wikipedia.org/wiki/Plauischer_Grund;;;Plauischer Grund;no_results;051_1786_Briefe_über_Sachsen_von_einem_Reisenden;54
+Weißeriz Bach;Location;https://de.wikipedia.org/wiki/Weißeritz;;;Weißeritzbach;no_results;051_1786_Briefe_über_Sachsen_von_einem_Reisenden;56
+Plauischer Grund;Location;;;;Plauischer Grund;no_results;051_1786_Briefe_über_Sachsen_von_einem_Reisenden;56
+Kurfürstlichen Vorwerk Ostra;Location;;;;Kurfürstliches Vorwerk Ostra;no_results;053_1786_Briefe_über_Sachsen_von_einem_Reisenden;49
+Lustschloß Uebigau;Location;https://de.wikipedia.org/wiki/Lustschloss_Übigau;;;Lustschloss Übigau;no_results;053_1786_Briefe_über_Sachsen_von_einem_Reisenden;49
+Manheimer Bühne;Location;;;;Manheimer Bühne;no_results;053_1786_Briefe_über_Sachsen_von_einem_Reisenden;50
+Lehmannische Bad;Location;;;;Lehmannische Bad;no_results;054_1786_Briefe_über_Sachsen_von_einem_Reisenden;47
+Linckische Bad;Location;;;;Linckische Bad;no_results;054_1786_Briefe_über_Sachsen_von_einem_Reisenden;47
+Böhmens;Location;https://de.wikipedia.org/wiki/Böhmen;;;Böhmens;no_results;054_1786_Briefe_über_Sachsen_von_einem_Reisenden;47
+Provianthäuser;Location;;;;Provianthäuser;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;17
+Tarduken;Location;;;;Tarduken;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;31
+Weßen Thorr;Location;;;;Weßen Thorr;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;36
+Potschaischen;Location;;;;Potschaischen;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;44
+Lehmannsche Bad;Location;https://de.wikipedia.org/wiki/Lehmannsches_Bad;;;Lehmannsche Bad;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;46
+Linkische Bad;Location;;;;Linkische Bad;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;46
+Böhmens;Location;https://de.wikipedia.org/wiki/Böhmen;;;Böhmens;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;46
+Weißpritzbrücke;Location;;;;Weißpritzbrücke;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;47
+Kurfürstliches Vorwerk Ostra;Location;;;;Kurfürstliches Vorwerk Ostra;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;48
+Lustschloß Uebigau;Location;;;;Lustschloss Übigau;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;48
+Kurfürstl. Lustschloß Nebigau;Location;;;;Kurfürstliches Lustschloss Übigau;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;51
+Priesniz;Location;;;;Priesniz;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;52
+Ockeritzer Mühle;Location;https://de.wikipedia.org/wiki/Ockeritzer_Mühle;;;Ockeritzer Mühle;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;54
+Mansfeldischen;Location;https://de.wikipedia.org/wiki/Mansfeld;;;Mansfeldischen;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;58
+VorderLEN;Location;;;;VorderLEN;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;58
+Mosshinskys Garten;Location;;;;Moschinskys Garten;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;59
+Preufen;Location;;;;Preufen;no_results;055_1786_Briefe_über_Sachsen_von_einem_Reisenden;64
+Rödingsbrück;Location;;;;Rödingsbrück;no_results;056_1786_Briefe_über_Sachsen_von_einem_Reisenden;14
+Grafschaft Schönburg;Location;https://de.wikipedia.org/wiki/Schönburg_(Sachsen);;;Grafschaft Schönburg;no_results;057_1787_Briefe_über_Herrnhut_und_andere_Orte_der_Oberlausitz;00000011.tif.original
+Prinz Eugenischer Garten;Location;https://de.wikipedia.org/wiki/Prinz‑Eugen‑Garten;;;Prinz Eugen Garten;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000015.tif.original
+Kaiserlustschloss;Location;https://de.wikipedia.org/wiki/Kaiserlustschloss;;;Kaiserlustschloss;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000015.tif.original
+Ruinengebäude;Location;;;;Ruinengebäude;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000017.tif.original
+Fürstl. Dietrichstei- sche Pallast;Location;https://de.wikipedia.org/wiki/Palais_Dietrichstein;;;Fürstliche Dietrichstein Palais;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000018.tif.original
+Yirenf;Location;;;;Yirenf;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000019.tif.original
+St. Loretokapell;Location;https://de.wikipedia.org/wiki/Loreto‑Kapelle_(Dresden);;;St. Loreto Kapelle;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000027.tif.original
+Graf Coselische (Schloss Cosel);Location;https://de.wikipedia.org/wiki/Schloss_Cosel;;;Schloss Cosel;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000028.tif.original
+Katholische Kirche (Dresdner Kathedrale);Location;https://de.wikipedia.org/wiki/Dresdner_Kathedrale;;;Katholische Hofkirche (Dresdner Kathedrale);no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000028.tif.original
+schweizer‑Wache;Location;;;;Schweizer Wache;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000028.tif.original
+Audienz Zimmer;Location;https://de.wikipedia.org/wiki/Residenzschloss_Dresden;;;Audienzzimmer;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000030.tif.original
+Spiegel‑ oder Damenzimmer;Location;https://de.wikipedia.org/wiki/Residenzschloss_Dresden;;;Spiegelzimmer;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000030.tif.original
+Pfalzbaiern;Location;;;;Pfalzbaiern;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000030.tif.original
+Schossargasse;Location;;;;Schossargasse;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000036.tif.original
+grüne Gewölbè;Location;;;;Grüne Gewölbe;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000036.tif.original
+Zwinger‑Gebäude;Location;https://de.wikipedia.org/wiki/Zwinger_(Dresden);;;Zwinger-Gebäude;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000045.tif.original
+Einsiedler-Stube;Location;https://de.wikipedia.org/wiki/Einsiedlerstube;;;Einsiedlerstube;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000046.tif.original
+Korallen‑Kabinett;Location;https://de.wikipedia.org/wiki/Kabinett_der_Korallen;;;Korallen-Kabinett;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000046.tif.original
+SchnecBergh;Location;;;;SchnecBergh;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000048.tif.original
+Bologneser;Location;;;;Bologneser Straße;no_results;059_1787_Reise_von_Wien_über_Prag,_Dresden_und_durch_einen_Theil_der_Lausitz_nach_Berlin_und_Potsdam;00000048.tif.original
+Mogul Reich;Location;;;;Mogul Reich;no_results;060_1789_Bemerkungen_auf_der_Reise_durch_Frankreich,_Italien_und_Deutschland;360
+kirfürstliche Kapelle;Location;;;;Kurfürstliche Kapelle;no_results;060_1789_Bemerkungen_auf_der_Reise_durch_Frankreich,_Italien_und_Deutschland;372
+Zhorn;Location;;;;Zhorn;no_results;061_1790_Bemerkungen_auf_einer_Reise_von_Thorn_durch_Posen_nach_Sachsen;00000143.tif.original
+Ban­terstadt;Location;;;;Ban­terstadt;no_results;061_1790_Bemerkungen_auf_einer_Reise_von_Thorn_durch_Posen_nach_Sachsen;00000144.tif.original
+Reisewitzschg Garten;Location;;;;Reisewitz Garten;no_results;062_1790_Bemerkungen_auf_einer_Reise_von_Thorn_durch_Posen_nach_Sachsen;00000106.tif.original
+Danemarck;Location;https://de.wikipedia.org/wiki/Dänemark;;;Danemarck;no_results;062_1790_Bemerkungen_auf_einer_Reise_von_Thorn_durch_Posen_nach_Sachsen;00000112.tif.original
+Pirnaischen Schlage;Location;;;;Pirnaisches Schloss;no_results;062_1790_Bemerkungen_auf_einer_Reise_von_Thorn_durch_Posen_nach_Sachsen;00000119.tif.original
+Seethore;Location;;;;Seethore;no_results;062_1790_Bemerkungen_auf_einer_Reise_von_Thorn_durch_Posen_nach_Sachsen;00000119.tif.original
+Churprinzlichen Palais;Location;;;;Kurprinzliches Palais;no_results;062_1790_Bemerkungen_auf_einer_Reise_von_Thorn_durch_Posen_nach_Sachsen;00000120.tif.original
+Brüderergäße;Location;;;;Brüderergasse;no_results;062_1790_Bemerkungen_auf_einer_Reise_von_Thorn_durch_Posen_nach_Sachsen;00000120.tif.original
+Glockenslafge;Location;;;;Glockensaal;no_results;062_1790_Bemerkungen_auf_einer_Reise_von_Thorn_durch_Posen_nach_Sachsen;00000120.tif.original
+Witgesnau;Location;;;;Wittgensau;no_results;063_1790_Bemerkungen_auf_einer_Reise_von_Thorn_durch_Posen_nach_Sachsen;00000083.tif.original
+Meißnischen;Location;;;;Meißnische Schweiz;no_results;063_1790_Bemerkungen_auf_einer_Reise_von_Thorn_durch_Posen_nach_Sachsen;00000091.tif.original
+Weißbuchhen;Location;;;;Weißbuchhen;no_results;063_1790_Bemerkungen_auf_einer_Reise_von_Thorn_durch_Posen_nach_Sachsen;00000093.tif.original
+Brühlsche Vildergallerie;Location;https://de.wikipedia.org/wiki/Br%C3%BChlsche_Terrasse;;;Brühlsche Bildergalerie;no_results;063_1790_Bemerkungen_auf_einer_Reise_von_Thorn_durch_Posen_nach_Sachsen;00000098.tif.original
+Reisewitschen Garten;Location;;;;Reisewitschen Garten;no_results;063_1790_Bemerkungen_auf_einer_Reise_von_Thorn_durch_Posen_nach_Sachsen;00000101.tif.original
+Weiberitz;Location;;;;Weiberitz;no_results;063_1790_Bemerkungen_auf_einer_Reise_von_Thorn_durch_Posen_nach_Sachsen;00000103.tif.original
+Karlshad;Location;;;;Karlshad;no_results;067_1791_Briefe_einer_Curländerinn_auf_einer_Reise_durch_Deutschland;75
+Böhmischen Felsenwegen;Location;;;;Böhmischer Felsenweg;no_results;067_1791_Briefe_einer_Curländerinn_auf_einer_Reise_durch_Deutschland;75
+Hu-berstburg;Location;;;;Hu-berstburg;no_results;072_1793_Briefe_eines_reisenden_Dänen._Geschrieben_im_Jahre_1791_und_1792_während_seiner_Reise_durch_einen_Th;62
+Fürstlicher Sitz;Location;;;;Fürstlicher Sitz;no_results;072_1793_Briefe_eines_reisenden_Dänen._Geschrieben_im_Jahre_1791_und_1792_während_seiner_Reise_durch_einen_Th;63
+Meissner Elbbrücke;Location;https://de.wikipedia.org/wiki/Meißner_Elbbrücke;;;Meißner Elbbrücke;no_results;075_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;198
+Princess Antonischten Garten;Location;https://de.wikipedia.org/wiki/Antonischer_Garten;;;Antonischer Garten;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;155
+Wirthshausel;Location;;;;Wirthshausel;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;155
+Richterscher Garten;Location;;;;Richterscher Garten;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;156
+Elggütch;Location;;;;Elggütch;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;158
+Deutsch-Oügen;Location;;;;Deutsch-Oügen;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;162
+Hüthen;Location;;;;Hüthen;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;162
+Obernreit in Franken;Location;;;;Obernreit in Franken;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;164
+Wißdrauer Tor;Location;https://de.wikipedia.org/wiki/Wißdrufer_Tor;;;Wißdrufer Tor;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;169
+Plauischer Grund;Location;;;;Plauischer Grund;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;169
+Commothau;Location;;;;Commothau;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;170
+Creuzthurlm;Location;;;;Creuzthurlm;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;174
+Vitzthumschen;Location;;;;Vitzthumschen;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;174
+Flemming'schen Pallais;Location;https://de.wikipedia.org/wiki/Flemming-Palais_(Dresden);;;Fleming'sches Palais;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;174
+Wilfsdrufers Thore;Location;;;;Wilhelm'scher Tor;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;175
+Riescheschen Garten;Location;;;;Riescheschen Garten;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;178
+Schwebd;Location;;;;Schwebd;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;178
+Dasdorf;Location;;;;Dasdorf;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;179
+Pallasien;Location;;;;Pallasien;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;180
+Elbuer;Location;;;;Elbuer;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;180
+Statue Augusts II;Location;https://de.wikipedia.org/wiki/August_der_Starke;;;Augustus II Statue;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;180
+Brühlsche Bildergallerie;Location;;;;Brühlsche Galerie;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;181
+Altdresden;Location;;;;Altdresden;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;182
+Brandruthe;Location;;;;Brandruthe;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;184
+Feuerzange;Location;;;;Feuerzange;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;184
+Russkammer;Location;;;;Russkammer;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;185
+Hoheitgarten;Location;;;;Hoheitgarten;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;185
+Mozinska;Location;;;;Mozinska;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;185
+Reisewitzens;Location;;;;Reisewitzens;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;185
+Brühlsche Bildergallerie;Location;;;;Brühlsche Galerie;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;185
+Uibisgau;Location;;;;Uibisgau;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;186
+Wilsdruffer Thore;Location;https://de.wikipedia.org/wiki/Wilsdruffer_Tor;;;Wilsdruffer Tor;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;187
+Gut stdt;Location;;;;Gut stdt;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;187
+Schainburg;Location;;;;Schainburg;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;189
+Madazin;Location;;;;Madazin;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;189
+Schwäbischer Reichskreis;Location;;;;Schwäbischer Reichskreis;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;190
+Kurfürstbayerische Lande;Location;;;;Kurfürstbayerische Lande;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;190
+Sächsischen Landes;Location;https://de.wikipedia.org/wiki/Sachsen;;;Sächsisches Land;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;191
+preußischen Staaten;Location;https://de.wikipedia.org/wiki/Preußen;;;preußischen Staaten;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;191
+Kaiserlichen Staaten;Location;;;;Kaiserlichen Staaten;no_results;076_1793_Briefe_auf_einer_Reise_durch_Deutschland_im_Jahre_1791;195
+Elbbrücke (Dresden);Location;https://de.wikipedia.org/wiki/Elbbr%C3%BCcke_(Dresden);;;Elbbrücke (Dresden);no_results;080_1794_Reise_in_Deutschland,_der_Schweiz,_Italien_und_Sicilien;398
+Terrasse des Brühlschen Gartens;Location;https://de.wikipedia.org/wiki/Br%C3%BChlscher_Garten;;;Terrasse des Brühlschen Gartens;no_results;080_1794_Reise_in_Deutschland,_der_Schweiz,_Italien_und_Sicilien;398
+Mieglitz;Location;https://de.wikipedia.org/wiki/M%C3%B6glitz;;;Möglitz;no_results;081_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000067.tif.original
+Elbsteine;Location;https://de.wikipedia.org/wiki/Elbsteine;;;Elbsandsteine;no_results;081_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000074.tif.original
+Pariser Bastille;Location;;;;Pariser Bastille;no_results;081_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000075.tif.original
+Okerwitzer Mühle;Location;https://de.wikipedia.org/wiki/Okerwitzer_M%C3%BChle;;;Okerwitz Mühle;no_results;081_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000083.tif.original
+Okerwitz;Location;https://de.wikipedia.org/wiki/Okerwitz;;;Okerwitz;no_results;081_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000083.tif.original
+Ostrawiese;Location;;;;Ostrauer Wiese;no_results;081_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000085.tif.original
+Ostraallee;Location;;;;Ostrauer Allee;no_results;081_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000085.tif.original
+Marmorhütte;Location;;;;Marmorhütte (Pirna);no_results;081_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000085.tif.original
+Linkische Bad;Location;;;;Linkische Bad;no_results;081_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000086.tif.original
+Neustädter Lindenallee;Location;;;;Neustädter Lindenallee;no_results;081_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000086.tif.original
+Reisewischen Garten;Location;;;;Riesewiesen Garten;no_results;081_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000087.tif.original
+Hegereutters;Location;;;;Hegerau;no_results;081_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000088.tif.original
+Tharander Bergschlosses;Location;;;;Tharandter Bergschloss;no_results;081_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000089.tif.original
+Thales Pfad;Location;;;;Thalespfad;no_results;081_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000091.tif.original
+Geberden;Location;;;;Geberden;no_results;081_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000102.tif.original
+Ostindien;Location;https://de.wikipedia.org/wiki/Ostindien;;;Ostindien;no_results;082_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000028.tif.original
+Marseller Zierathen;Location;;;;Marseller Zierathen;no_results;082_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000035.tif.original
+Magazinführen;Location;;;;Magazinführen;no_results;082_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000036.tif.original
+Altdresden;Location;https://de.wikipedia.org/wiki/Altstadt_(Dresden);;;Altdresden;no_results;082_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000039.tif.original
+Brickc;Location;;;;Brickc;no_results;082_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000041.tif.original
+Vikthumische Palais;Location;;;;Vikthumische Palais;no_results;082_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000044.tif.original
+Kurfürstliche Bibliothek;Location;https://de.wikipedia.org/wiki/Staatsbibliothek_Dresden;;;Kurfürstliche Bibliothek;no_results;082_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000045.tif.original
+Dasdorf;Location;;;;Dasdorf;no_results;082_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000046.tif.original
+Dellberge;Location;;;;Delleberg;no_results;082_1795_Kleine_Wanderungen_durch_Sachsen_und_Brandenburg;00000047.tif.original
+Lustschloß Uebigen;Location;;;;Lustschloss Übigau;no_results;087_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000168.tif.original
+Naumannische Weinberg;Location;https://de.wikipedia.org/wiki/Naumann%27scher_Weinberg;;;Naumann'scher Weinberg;no_results;087_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000168.tif.original
+Seefers;Location;;;;Seefers;no_results;087_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000170.tif.original
+Vorsberg;Location;https://de.wikipedia.org/wiki/Vorsberg;;;Vorsberg;no_results;087_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000171.tif.original
+Elbbrücke (Dresden);Location;https://de.wikipedia.org/wiki/Elbbrücke_(Dresden);;;Elbbrücke (Dresden);no_results;087_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000179.tif.original
+Lehmannisches Bad;Location;https://de.wikipedia.org/wiki/Lehmannsches_Bad;;;Lehmannsches Bad;no_results;087_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000181.tif.original
+Kurfürstliches Haus;Location;https://de.wikipedia.org/wiki/Residenzschloss_(Dresden);;;Kurfürstliches Haus;no_results;087_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000211.tif.original
+Knickzbach;Location;;;;Knickzbach;no_results;087_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000219.tif.original
+Anspach‑Bayreuth;Location;;;;Anspach‑Bayreuth;no_results;088_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000133.tif.original
+Altdresden;Location;;;;Altdresden;no_results;088_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000143.tif.original
+Churftüsten;Location;;;;Churftüsten;no_results;088_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000145.tif.original
+Graaflich Bünauischen;Location;https://de.wikipedia.org/wiki/Bünau_(Sachsen);;;Graaflich Bünauischen;no_results;088_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000153.tif.original
+Renfersee;Location;;;;Renfersee;no_results;088_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000159.tif.original
+Parthien;Location;;;;Parthien;no_results;088_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000163.tif.original
+Lehmannisches Bad;Location;https://de.wikipedia.org/wiki/Lehmannsches_Bad;;;Lehmannsches Bad;no_results;088_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000163.tif.original
+Hofbuchsauspielhause;Location;;;;Hofbuchsauspielhause;no_results;088_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000164.tif.original
+Naumanns Weinberg;Location;;;;Naumann's Weinberg;no_results;088_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000165.tif.original
+Vorsberg;Location;;;;Vorsberg;no_results;088_1795_Hans_Kiekindiewelts_Reisen_in_alle_vier_Weltteile_und_andere_Schriften;00000165.tif.original
+Lehrmannisches Bad;Location;https://de.wikipedia.org/wiki/Lehrmannisches_Bad;;;Lehrmannisches Bad;no_results;090_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;185
+Pfalzweibrücken;Location;;;;Pfalzweibrücken;no_results;090_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;187
+Hoffsitthen;Location;;;;Hoffsitthen;no_results;090_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;202
+Dasdorf;Location;;;;Dasdorf;no_results;090_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;211
+Hofhalle;Location;https://de.wikipedia.org/wiki/Hofhalle_(Dresden);;;Hofhalle;no_results;090_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;221
+Kaiz Rod;Location;;;;Kaiserrode;no_results;090_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;225
+Neusserre;Location;;;;Neusserre;no_results;090_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;239
+Lonsdon;Location;;;;Lonsdon;no_results;090_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;239
+Italienisches Dorf;Location;;;;Italienisches Dorf;no_results;091_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;145
+Altdresden;Location;;;;Altdresden;no_results;091_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;145
+Altdresden;Location;https://de.wikipedia.org/wiki/Altdresden;;;Altdresden;no_results;091_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;148
+Palais des Grafen Marcolini;Location;;;;Palais des Grafen Marcolini;no_results;091_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;149
+Schalkischen Gemach;Location;;;;Schalkisches Gemach;no_results;091_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;154
+Antiken‑Kabinet;Location;;;;Antiken Kabinett;no_results;091_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;155
+Rükammever;Location;;;;Rükammever;no_results;091_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;159
+Uibigau;Location;;;;Uibigau;no_results;091_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;166
+Palais des Prinzen Marx;Location;;;;Palais des Prinzen Marx;no_results;091_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;166
+Linkisches Bad;Location;;;;Linkisches Bad;no_results;091_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;167
+Coschewitzer Grund;Location;;;;Cossewitz Grund;no_results;091_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;169
+Naumanns Weinberg;Location;https://de.wikipedia.org/wiki/Naumanns_Weinberg;;;Naumann's Weinberg;no_results;091_1795_Wanderungen_und_Kreuzzüge_durch_einen_Theil_Deutschlands;169
+Kurfürstliche Galerie;Location;https://de.wikipedia.org/wiki/Kurfürstliche_Galerie_(Dresden);;;Kurfürstliche Galerie;no_results;093_1795_Bemerkungen_auf_einer_Reise_von_Kopenhagen_nach_Wien_im_Jahr_1793;58
+Gärten der Prinzen;Location;https://de.wikipedia.org/wiki/G%C3%A4rten_der_Prinzen;;;Gärten der Prinzen;no_results;093_1795_Bemerkungen_auf_einer_Reise_von_Kopenhagen_nach_Wien_im_Jahr_1793;65
+Preußischer Staat;Location;;;;Preußischer Staat;no_results;095_1796_Reisen_durch_Deutschland,_Frankreich,_England_und_Holland_in_verschiedener,_besonders_politischer_Hi;207
+Rolandssäulen;Location;;;;Rolandssäulen;no_results;095_1796_Reisen_durch_Deutschland,_Frankreich,_England_und_Holland_in_verschiedener,_besonders_politischer_Hi;210
+Zehist;Location;;;;Zehist;no_results;097_1796_Wanderungen_durch_die_Niederlande,_Deutschland,_die_Schweiz_und_Italien_1793_und_1794;499
+Elbbücke;Location;https://de.wikipedia.org/wiki/Augustusbr%C3%BCcke_(Dresden);;;Elbbücke;no_results;098_1797_Reisen_und_merkwürdige_Nachrichten_zweier_Neufranken_durch_Deutschland,_Rußland,_Polen_und_die_Oeste;32
+Hollandisches Palais;Location;https://de.wikipedia.org/wiki/Hollandisches_Palais;;;Hollandisches Palais;no_results;098_1797_Reisen_und_merkwürdige_Nachrichten_zweier_Neufranken_durch_Deutschland,_Rußland,_Polen_und_die_Oeste;33
+Brühlscher Palast;Location;https://de.wikipedia.org/wiki/Brühlscher_Palast;;;Brühlscher Palast;no_results;098_1797_Reisen_und_merkwürdige_Nachrichten_zweier_Neufranken_durch_Deutschland,_Rußland,_Polen_und_die_Oeste;33
+Linkisches Bad;Location;;;;Linkisches Bad;no_results;098_1797_Reisen_und_merkwürdige_Nachrichten_zweier_Neufranken_durch_Deutschland,_Rußland,_Polen_und_die_Oeste;33
+Churfürstlicher Garten;Location;;;;Kurfürstlicher Garten;no_results;098_1797_Reisen_und_merkwürdige_Nachrichten_zweier_Neufranken_durch_Deutschland,_Rußland,_Polen_und_die_Oeste;33
+Plauischer Grund;Location;;;;Plauischer Grund;no_results;098_1797_Reisen_und_merkwürdige_Nachrichten_zweier_Neufranken_durch_Deutschland,_Rußland,_Polen_und_die_Oeste;33
+Pretlin;Location;;;;Pretlin;no_results;098_1797_Reisen_und_merkwürdige_Nachrichten_zweier_Neufranken_durch_Deutschland,_Rußland,_Polen_und_die_Oeste;36
+Preßsch;Location;;;;Preßsch;no_results;098_1797_Reisen_und_merkwürdige_Nachrichten_zweier_Neufranken_durch_Deutschland,_Rußland,_Polen_und_die_Oeste;36
+Pastellzimmer;Location;;;;Pastellzimmer;no_results;098_1797_Reisen_und_merkwürdige_Nachrichten_zweier_Neufranken_durch_Deutschland,_Rußland,_Polen_und_die_Oeste;38
+Galerie der Vögel;Location;;;;Galerie der Vögel;no_results;098_1797_Reisen_und_merkwürdige_Nachrichten_zweier_Neufranken_durch_Deutschland,_Rußland,_Polen_und_die_Oeste;41
+Rastcammer;Location;;;;Rastkammer;no_results;098_1797_Reisen_und_merkwürdige_Nachrichten_zweier_Neufranken_durch_Deutschland,_Rußland,_Polen_und_die_Oeste;47
+Seimensdorf;Location;https://de.wikipedia.org/wiki/Seimensdorf;;;Seimensdorf;no_results;099_1798_Erzählungen_von_einer_Reise_durch_einen_großen_Theil_Deutschlands_und_der_Schweiz,_im_Jahre_1796;54
+Kührhaus;Location;;;;Kührhaus;no_results;099_1798_Erzählungen_von_einer_Reise_durch_einen_großen_Theil_Deutschlands_und_der_Schweiz,_im_Jahre_1796;54
+Herculanischen;Location;;;;Herculanischer Saal;no_results;099_1798_Erzählungen_von_einer_Reise_durch_einen_großen_Theil_Deutschlands_und_der_Schweiz,_im_Jahre_1796;59
+Tödtens‑frille;Location;;;;Tödtens‑frille;no_results;099_1798_Erzählungen_von_einer_Reise_durch_einen_großen_Theil_Deutschlands_und_der_Schweiz,_im_Jahre_1796;62
+Italienisches Dorf;Location;;;;Italienisches Dorf;no_results;099_1798_Erzählungen_von_einer_Reise_durch_einen_großen_Theil_Deutschlands_und_der_Schweiz,_im_Jahre_1796;65
+Dresdner Nüßkammer;Location;https://de.wikipedia.org/wiki/Nusskammer_(Dresden);;;Dresdner Nusskammer;no_results;100_1798_Erzählungen_von_einer_Reise_durch_einen_großen_Theil_Deutschlands_und_der_Schweiz,_im_Jahre_1796;21
+Galliae;Location;;;;Galliae;no_results;100_1798_Erzählungen_von_einer_Reise_durch_einen_großen_Theil_Deutschlands_und_der_Schweiz,_im_Jahre_1796;25
+Meißnisch;Location;https://de.wikipedia.org/wiki/Mei%C3%9Fen;;;Meißnisch;no_results;100_1798_Erzählungen_von_einer_Reise_durch_einen_großen_Theil_Deutschlands_und_der_Schweiz,_im_Jahre_1796;33
+Dustin Saal;Location;;;;Dustin Saal;no_results;100_1798_Erzählungen_von_einer_Reise_durch_einen_großen_Theil_Deutschlands_und_der_Schweiz,_im_Jahre_1796;37
+Silberbergwerke Himmelsfürst;Location;https://de.wikipedia.org/wiki/Silberbergwerk_Himmelsfürst;;;Silberbergwerke Himmelsfürst;no_results;100_1798_Erzählungen_von_einer_Reise_durch_einen_großen_Theil_Deutschlands_und_der_Schweiz,_im_Jahre_1796;38
+Dafeyn;Location;;;;Dafeyn;no_results;100_1798_Erzählungen_von_einer_Reise_durch_einen_großen_Theil_Deutschlands_und_der_Schweiz,_im_Jahre_1796;44
+Plauischer Grund;Location;https://de.wikipedia.org/wiki/Plauischer_Grund;;;Plauischer Grund;no_results;101_1798_Meine_Reise_in_das_Sächsische_Erzgebirge_im_Monath_August_1798;00000036.tif.original
+Lehmannischem Bade;Location;;;;Lehmannsches Bad;no_results;105_1798_Reisen_nach_und_in_der_Oberlausitz;13
+Loschwizer Weinberge;Location;https://de.wikipedia.org/wiki/Loschwitz;;;Loschwitzer Weinberge;no_results;105_1798_Reisen_nach_und_in_der_Oberlausitz;13
+Langebrükschen Haide;Location;;;;Langebrücker Haide;no_results;105_1798_Reisen_nach_und_in_der_Oberlausitz;14
+Vischoffswerd;Location;;;;Wischofswerda;no_results;105_1798_Reisen_nach_und_in_der_Oberlausitz;16
+Wierthshaus zum Weisen Hirish;Location;;;;Wertshaus zum Weißen Hirsch;no_results;106_1798_Gemälde_über_die_Ober-Lausitz._Gesammelt_auf_einer_kleinen_Fußreise;00000239.tif.original
+Ewartent;Location;;;;Ewartent;no_results;106_1798_Gemälde_über_die_Ober-Lausitz._Gesammelt_auf_einer_kleinen_Fußreise;00000239.tif.original
+Böhmische Grenze;Location;;;;Böhmische Grenze;no_results;107_1798_Gemälde_über_die_Ober-Lausitz._Gesammelt_auf_einer_kleinen_Fußreise;00000017.tif.original
+Bauzens' Poststraße;Location;;;;Bautzener Poststraße;no_results;107_1798_Gemälde_über_die_Ober-Lausitz._Gesammelt_auf_einer_kleinen_Fußreise;00000020.tif.original
+Loschwitzer Weinberge;Location;https://de.wikipedia.org/wiki/Loschwitz;;;Loschwitzer Weinberge;no_results;107_1798_Gemälde_über_die_Ober-Lausitz._Gesammelt_auf_einer_kleinen_Fußreise;00000021.tif.original
+Lehmannische Bade;Location;;;;Lehmannsches Bad;no_results;107_1798_Gemälde_über_die_Ober-Lausitz._Gesammelt_auf_einer_kleinen_Fußreise;00000021.tif.original
+Groß-Dobrzych;Location;;;;Groß-Dobrzych;no_results;108_1798_Fußreise_von_Dresden_nach_den_zwei_verfallenen_Bergschlössern,_die_Rathen,_und_die_dortige_Gegend;47
+Köpid;Location;;;;Köpid;no_results;108_1798_Fußreise_von_Dresden_nach_den_zwei_verfallenen_Bergschlössern,_die_Rathen,_und_die_dortige_Gegend;50
+Fulhausen;Location;;;;Fuldau;no_results;110_1798_Eine_kleine_Fußreise_von_Dresden_nach_Pirna._An_Herrn_J._Hermsdorf_in_Görlitz;7
+Marktfarren;Location;;;;Marktfarren;no_results;111_1799_Neue_Ansicht_von_Dresden._Für_Reisende_von_einem_Reisenden;00000011.tif.original
+Priesnitzer Schlage;Location;;;;Priesnitzschlag;no_results;111_1799_Neue_Ansicht_von_Dresden._Für_Reisende_von_einem_Reisenden;00000196.tif.original
+Pillnitzer Schlage;Location;;;;Pillnitzer Schlag;no_results;111_1799_Neue_Ansicht_von_Dresden._Für_Reisende_von_einem_Reisenden;00000200.tif.original
+Vorsberg;Location;https://de.wikipedia.org/wiki/Vorsberg;;;Vorsberg;no_results;111_1799_Neue_Ansicht_von_Dresden._Für_Reisende_von_einem_Reisenden;00000200.tif.original
+Seidelschena;Location;;;;Seidelschena;no_results;111_1799_Neue_Ansicht_von_Dresden._Für_Reisende_von_einem_Reisenden;00000203.tif.original
+Lustschloß Sedlitz;Location;;;;Lustschloss Sedlitz;no_results;111_1799_Neue_Ansicht_von_Dresden._Für_Reisende_von_einem_Reisenden;00000204.tif.original
+Wesenstein;Location;https://de.wikipedia.org/wiki/Wesenstein_(Sachsen);;;Wesenstein;no_results;111_1799_Neue_Ansicht_von_Dresden._Für_Reisende_von_einem_Reisenden;00000204.tif.original
+Wesenstein;Location;https://de.wikipedia.org/wiki/Wesenstein_(Sachsen);;;Wesenstein;no_results;111_1799_Neue_Ansicht_von_Dresden._Für_Reisende_von_einem_Reisenden;00000205.tif.original
+Dörfchen Potscha pel;Location;;;;Dörfchen Potschappel;no_results;111_1799_Neue_Ansicht_von_Dresden._Für_Reisende_von_einem_Reisenden;00000215.tif.original
+Berge Tharands;Location;;;;Berge Tharandt;no_results;111_1799_Neue_Ansicht_von_Dresden._Für_Reisende_von_einem_Reisenden;00000215.tif.original
+Eowitzons;Location;;;;Eowitzons;no_results;111_1799_Neue_Ansicht_von_Dresden._Für_Reisende_von_einem_Reisenden;00000216.tif.original
+Plauenschen Gasse;Location;https://de.wikipedia.org/wiki/Plauenscher_Stra%C3%9Fe;;;Plauenscher Gasse;no_results;111_1799_Neue_Ansicht_von_Dresden._Für_Reisende_von_einem_Reisenden;00000218.tif.original
+Farnesischen Palastie;Location;https://de.wikipedia.org/wiki/Farnesischer_Palast;;;Farnesischen Palastie;no_results;112_1799_Briefe_eines_reisenden_Russen;202
+Farnesische Gallerie;Location;https://de.wikipedia.org/wiki/Galleria_Farnese;;;Farnesische Gallerie;no_results;112_1799_Briefe_eines_reisenden_Russen;205
+Pokschoppel;Location;;;;Pokschoppel;no_results;113_1799_Meine_Reise_im_deutschen_Vaterlande,_aus_Thüringen_ins_Riesengebürge_zu_den_Elbquellen_und_durch_Böh;00000051.tif.original
+Plauener Grund Vor;Location;;;;Plauener Grund;no_results;113_1799_Meine_Reise_im_deutschen_Vaterlande,_aus_Thüringen_ins_Riesengebürge_zu_den_Elbquellen_und_durch_Böh;00000051.tif.original
+Umernberg;Location;;;;Umernberg;no_results;113_1799_Meine_Reise_im_deutschen_Vaterlande,_aus_Thüringen_ins_Riesengebürge_zu_den_Elbquellen_und_durch_Böh;00000054.tif.original
+Elbbannée;Location;https://de.wikipedia.org/wiki/Elbe;;;Elbbahn;no_results;113_1799_Meine_Reise_im_deutschen_Vaterlande,_aus_Thüringen_ins_Riesengebürge_zu_den_Elbquellen_und_durch_Böh;00000056.tif.original
+Böhmische Gebirge;Location;;;;Böhmisches Gebirge;no_results;113_1799_Meine_Reise_im_deutschen_Vaterlande,_aus_Thüringen_ins_Riesengebürge_zu_den_Elbquellen_und_durch_Böh;00000058.tif.original
+Porschberg;Location;;;;Porschberg;no_results;113_1799_Meine_Reise_im_deutschen_Vaterlande,_aus_Thüringen_ins_Riesengebürge_zu_den_Elbquellen_und_durch_Böh;00000060.tif.original
+Churfürstlicher Garten;Location;;;;Kurfürstlicher Garten;no_results;113_1799_Meine_Reise_im_deutschen_Vaterlande,_aus_Thüringen_ins_Riesengebürge_zu_den_Elbquellen_und_durch_Böh;00000078.tif.original
+Elbbrücke (Dresden);Location;https://de.wikipedia.org/wiki/Elbbr%C3%BCcke_(Dresden);;;Elbbrücke (Dresden);no_results;114_1799_Meine_Reise_im_deutschen_Vaterlande,_aus_Thüringen_ins_Riesengebürge_zu_den_Elbquellen_und_durch_Böh;00000044.tif.original
+Römisches Palais;Location;;;;Römisches Palais;no_results;114_1799_Meine_Reise_im_deutschen_Vaterlande,_aus_Thüringen_ins_Riesengebürge_zu_den_Elbquellen_und_durch_Böh;00000045.tif.original
+Raths‑Einnahme‑Stube;Location;;;;Rathaus-Einnahmestube;no_results;115_1799_Meine_Reise_im_deutschen_Vaterlande,_aus_Thüringen_ins_Riesengebürge_zu_den_Elbquellen_und_durch_Böh;00000029.tif.original
+Sächsisches Mark;Location;https://de.wikipedia.org/wiki/S%C3%A4chsisches_Mark;;;Sächsisches Mark;no_results;115_1799_Meine_Reise_im_deutschen_Vaterlande,_aus_Thüringen_ins_Riesengebürge_zu_den_Elbquellen_und_durch_Böh;00000032.tif.original
+Domthurem;Location;https://de.wikipedia.org/wiki/Dresdner_Dom;;;Domtür;no_results;115_1799_Meine_Reise_im_deutschen_Vaterlande,_aus_Thüringen_ins_Riesengebürge_zu_den_Elbquellen_und_durch_Böh;00000038.tif.original
+Got thischen Tempel;Location;;;;Got thischen Tempel;no_results;115_1799_Meine_Reise_im_deutschen_Vaterlande,_aus_Thüringen_ins_Riesengebürge_zu_den_Elbquellen_und_durch_Böh;00000038.tif.original
+Südlichen Europa;Location;https://de.wikipedia.org/wiki/Südeuropa;;;Südlichen Europa;no_results;119_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000625.tif.original
+Porpyhr;Location;;;;Porpyhr;no_results;119_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000630.tif.original
+Kalk am Plauenschen Grunde;Location;;;;Kalk am Plauenschen Grund;no_results;119_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000630.tif.original
+Christallkiesel;Location;;;;Kristallkiesel;no_results;119_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000630.tif.original
+Zabelitz;Location;https://de.wikipedia.org/wiki/Zabelitz;;;Zabelitz;no_results;119_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000630.tif.original
+Böhmischen Gebirge;Location;;;;Böhmisches Gebirge;no_results;119_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000634.tif.original
+Japanischer Palaisgarten;Location;https://de.wikipedia.org/wiki/Japanischer_Garten_(Dresden);;;Japanischer Palaisgarten;no_results;119_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000634.tif.original
+Ostrawiese;Location;;;;Ostrauer Wiese;no_results;119_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000634.tif.original
+Weixmühle;Location;https://de.wikipedia.org/wiki/Weixmühle;;;Weixmühle;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000524.tif.original
+Altandach;Location;;;;Altandach;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000525.tif.original
+Elbfläche;Location;https://de.wikipedia.org/wiki/Elbe;;;Elbfläche;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000526.tif.original
+Johannissaal;Location;;;;Johannissaal;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000526.tif.original
+Pastenstein;Location;https://de.wikipedia.org/wiki/Pastenstein;;;Pastenstein;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000527.tif.original
+Böhmens Grenze;Location;;;;Böhmens Grenze;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000527.tif.original
+Sonnenstein (Bergschloss Sonnenstein);Location;https://de.wikipedia.org/wiki/Schloss_Sonnenstein;;;Bergschloss Sonnenstein;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000528.tif.original
+Hohenstein (Bergschloss Hohenstein);Location;https://de.wikipedia.org/wiki/Burg_Hohenstein_(Sachsen);;;Bergschloss Hohenstein;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000528.tif.original
+Wesenstein;Location;https://de.wikipedia.org/wiki/Schloss_Wesenstein;;;Wesenstein;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000529.tif.original
+Leinewand;Location;;;;Leinewand;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000549.tif.original
+Maseyk;Location;;;;Maseyk;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000555.tif.original
+Rasttag;Location;;;;Rasttag;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000572.tif.original
+Uckerwitz;Location;https://de.wikipedia.org/wiki/Uckerwitz;;;Uckerwitz;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000584.tif.original
+Plauenschen Gasse;Location;;;;Plauenscher Gasse;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000597.tif.original
+Pirnaer Vorstadt;Location;https://de.wikipedia.org/wiki/Pirnaer_Vorstadt;;;Pirnaer Vorstadt;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000601.tif.original
+Reisewitzschen Garten;Location;;;;Reisewitzscher Garten;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000603.tif.original
+Coselschen Garten;Location;;;;Cosel'scher Garten;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000603.tif.original
+Neustadt an der Dosse;Location;https://de.wikipedia.org/wiki/Neustadt_an_der_Dosse;;;Neustadt an der Dosse;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000606.tif.original
+Weitzeritz;Location;https://de.wikipedia.org/wiki/Weißeritz;;;Weitzeritz;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000606.tif.original
+Freiberger Schlage;Location;;;;Freiberger Schlage;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000606.tif.original
+Walmühle;Location;;;;Walmühle;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000607.tif.original
+Tobacksmühle;Location;;;;Tobacksmühle;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000607.tif.original
+Preysnitzerstrasse;Location;;;;Preysnitzstraße;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000608.tif.original
+Pirnaer Vorstadt;Location;https://de.wikipedia.org/wiki/Pirnaer_Vorstadt;;;Pirnaer Vorstadt;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000608.tif.original
+Oberschläm;Location;;;;Oberschläm;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000610.tif.original
+Sächsischen Gebirgen;Location;;;;Sächsisches Gebirge;no_results;120_1801_Schönheiten_der_Natur_und_Kunst_dargestellt_auf_einer_Reise_durch_einen_Theil_der_Sächsischen_Staate;00000613.tif.original
+Göttzleube;Location;;;;Göttzleube;no_results;202_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;102
+Wesenitzthal;Location;;;;Wesenitzthal;no_results;202_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;104
+Liebethaler Steinbrüche;Location;https://de.wikipedia.org/wiki/Liebethaler_Steinbr%C3%BCche;;;Liebethaler Steinbrüche;no_results;202_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;104
+Ottowalder Grund;Location;;;;Ottwalder Grund;no_results;202_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;104
+Kiefericht;Location;;;;Kiefericht;no_results;202_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;104
+Kirnitzschthal;Location;;;;Kirnitzschthal;no_results;202_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;104
+Kuhiall;Location;;;;Kuhiall;no_results;202_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;104
+Habichtgrund;Location;;;;Habichtgrund;no_results;202_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;104
+Kloster Altzelle;Location;;;;Kloster Altzelle;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;101
+Schloßgarten des Grafen von Brühl;Location;;;;Schlossgarten des Grafen von Brühl (Dresden);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;101
+Thal an der Röder;Location;https://de.wikipedia.org/wiki/Thal_(Sachsen);;;Thal an der Röder (Saxony);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;101
+Liegau an der Röder;Location;https://de.wikipedia.org/wiki/Liegau_an_der_R%C3%B6der;;;Liegau an der Röder (now Liegau‑Augustusbad);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;101
+Dorfe Priesnitz;Location;https://de.wikipedia.org/wiki/Priesnitz;;;Priesnitz (Dresden);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;101
+Götzleube;Location;;;;Götzleube;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;102
+Böhmern;Location;https://de.wikipedia.org/wiki/B%C3%B6hmern;;;Böhmern (Meißen);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;102
+Belvedere (Pillnitz);Location;https://de.wikipedia.org/wiki/Belvedere_(Pillnitz);;;Belvedere (Pillnitz;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;102
+Trübatisch‑thals;Location;;;;Trübatisch‑thals;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;62
+Zschishewig;Location;https://de.wikipedia.org/wiki/Zschishewig;;;Zschishewig;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;62
+Vorsberg;Location;https://de.wikipedia.org/wiki/Vorsberg;;;Vorsberg;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;62
+Weißtropp;Location;;;;Weißtropp;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;62
+Gewehrgalerie;Location;;;;Gewehrgalerie;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;67
+Domkirche zu Florenz;Location;;;;Domkirche zu Freiberg;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;67
+Sassaferzato;Location;;;;Sassaferzato;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;69
+galerie royale de Dresden;Location;https://de.wikipedia.org/wiki/Gem%C3%A4ldegalerie_Alte_Meister;;;Royal Gallery (Dresden);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;69
+Zournefort;Location;;;;Zournefort;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;70
+Hebenstret;Location;;;;Hebenstret;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;70
+Seaundfellen;Location;;;;Seaundfellen;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;70
+Böhmisches Gebirge;Location;;;;Böhmisches Gebirge (Bohemian Forest);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;75
+Draschenberg;Location;;;;Draschenberg;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;76
+Kaidizzbach;Location;;;;Kaidizzbach;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;78
+Secvorstadt;Location;;;;Secvorstadt;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;79
+Wilsdrufer Vorstadt;Location;;;;Wilsdrufer Vorstadt;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;79
+Wilsdrufer Thor;Location;;;;Wilsdrufer Tor (Dresden);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;79
+Ostraallee;Location;;;;Ostrauer Allee;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;79
+marcolinische Gartenschloß;Location;;;;Markgräfliches Gartenschloss (Dresden);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;79
+Böhmischen Gebirgen;Location;https://de.wikipedia.org/wiki/Böhmisches_Mittelgebirge;;;Böhmisches Gebirge (Bohemian Forest);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;80
+Meissner Gebirgen;Location;https://de.wikipedia.org/wiki/Erzgebirge;;;Meißner Gebirge (Meissen);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;80
+Dreifñönigikrail;Location;;;;Dreifönigskirche (Dresden);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;84
+Schwarzes Tor (Dresden);Location;https://de.wikipedia.org/wiki/Schwarzes_Tor_(Dresden);;;Schwarzes Tor (Dresden);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;85
+Haide (Dresden);Location;https://de.wikipedia.org/wiki/Haide_(Dresden);;;Haide (Dresden);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;85
+Rampuschen Gasse;Location;;;;Rumpelgasse (Dresden);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;87
+Schenswerth;Location;;;;Schenswerth;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;90
+Ostraallee;Location;https://de.wikipedia.org/wiki/Ostra-Allee;;;Ostrauer Allee;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;94
+Brunnabad;Location;;;;Brunnabad;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;94
+Krebs-schen Weinberg;Location;https://de.wikipedia.org/wiki/Krebscher_Weinberg;;;Krebschen Weinberg (Dresden);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;94
+Calberla'schen Hause;Location;;;;Calberla'sches Haus (Dresden);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;96
+Schlosswizzer Grund;Location;;;;Schlosswitzer Grund (Dresden);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;97
+Reisewitzens Lustgarten;Location;;;;Reisewitzens Lustgarten;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;98
+Zaukerode;Location;https://de.wikipedia.org/wiki/Zaukerode;;;Zaukerode;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;98
+Kolsdorf;Location;https://de.wikipedia.org/wiki/Kolsdorf;;;Kölsdorf (Dresden);no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;98
+Gorbiz;Location;;;;Gorbiz;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;98
+Falkenschlag;Location;;;;Falkenschlag;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;98
+Grunlenburg;Location;;;;Grunlenburg;no_results;203_1827_Reisen_nach_den_vorzüglichsten_Hauptstädten_von_Mittel-Europa._Eine_Schilderung_der_Länder_und_Städt;99
+Kurfürstlicher Pallast;Location;https://de.wikipedia.org/wiki/Kurfürstliches_Palais_(Dresden);;;Kurfürstlicher Palast (Dresden);no_results;204_1831_Reise_durch_Deutschland_Ungarn,_Holland,_Italien,_Frankreich,_Großbritanien_und_Irland;32
+Wiohe‑rinne;Location;;;;Wöhlener Rinne;no_results;204_1831_Reise_durch_Deutschland_Ungarn,_Holland,_Italien,_Frankreich,_Großbritanien_und_Irland;34
+Hldbammen;Location;;;;Hldbammen;no_results;204_1831_Reise_durch_Deutschland_Ungarn,_Holland,_Italien,_Frankreich,_Großbritanien_und_Irland;34
+Schlier bei dem Elntbin;Location;https://de.wikipedia.org/wiki/Schlier;;;Schlier bei dem Elntbin;no_results;204_1831_Reise_durch_Deutschland_Ungarn,_Holland,_Italien,_Frankreich,_Großbritanien_und_Irland;34
+Kulmerberge;Location;https://de.wikipedia.org/wiki/Kulmer_Berge;;;Kulmerberge;no_results;206_1831_Skizzen_einer_Reise_von_Wien_über_Prag,_Teplitz,_Dresden,_Berlin,_Leipzig,_Weimar,_Frankfurt_am_Main;27
+Egerbrunnen;Location;;;;Egerbrunnen;no_results;223_1899_Reise_durch_Sachsen_im_Jahre_1813._Briefe_Goethes_an_Christiane;00000049.tif.original
+Whistmarcken;Location;;;;Whistmarcken;no_results;224_1899_Reise_durch_Sachsen_im_Jahre_1813._Briefe_Goethes_an_Christiane;00000042.tif.original
+Franzsenbrunn;Location;https://de.wikipedia.org/wiki/Franti%C5%A1kovy_L%C3%A1zn%C4%9B;;;Franzosenbrunn;no_results;224_1899_Reise_durch_Sachsen_im_Jahre_1813._Briefe_Goethes_an_Christiane;00000043.tif.original
+Louisdors;Location;;;;Louisdors;no_results;224_1899_Reise_durch_Sachsen_im_Jahre_1813._Briefe_Goethes_an_Christiane;00000046.tif.original
