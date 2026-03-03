@@ -4,7 +4,7 @@ import pandas as pd
 # -------------------------
 # 1. Load input CSV
 # -------------------------
-df = pd.read_csv("full_places_dresden.csv", sep="|")
+df = pd.read_csv("Data/Geolocation_Metadata/places_dresden_combined_with_sentences.csv", sep="|")
 
 PLACE_NAME = "Dresden, Germany"
 
@@ -93,10 +93,10 @@ print("Rivers found:", len(rivers))
 
 df["osm_feature_found"] = df["geocode_query"].isin(found_entities)
 
-df.to_csv("full_places_dresden_with_osm_flag.csv", index=False, sep="|")
+df.to_csv("places_dresden_combined_with_sentences_with_osm_flag.csv", index=False, sep="|")
 
 print("Matched entities:", len(found_entities))
-print("Updated CSV saved as full_places_dresden_with_osm_flag.csv")
+print("Updated CSV saved as places_dresden_combined_with_sentences_with_osm_flag.csv")
 
 import osmnx as ox
 import geopandas as gpd
