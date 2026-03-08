@@ -84,3 +84,4 @@ weasel==0.4.3
 wheel==0.45.1
 wrapt==2.0.1
 xyzservices==2025.11.0
+rapidfuzz==2.15.1

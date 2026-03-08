@@ -2,36 +2,58 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Dresden Historical Map</title>
+  <title>Deep Mapping Dresden</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+  <script src="/config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <link rel="stylesheet" href="css/custom.css"/>
 </head>
 <body>
 
+<header class="site-header">
+  <div class="header-title">Deep Mapping Dresden - Travelogues 1604-1900 </div>
+
+  <nav class="header-nav">
+    <a href="about.html"><b>About</b></a>
+  </nav>
+</header>
+
 <div id="map"></div>
 
 <div id="sidebar" class="sidebar">
-  <div class="sidebar-header">Places Not Geolocated</div>
-  <div id="sidebarContent" class="sidebar-content"></div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-header">Dresden Mentions</div>
+    <div id="dresdenContent"></div>
+  </div>
 </div>
 
 <script>
 
 const COLORS = {
   certain: "#084808",
-  uncertain: "#003366",
+  uncertain: "#FFA500",
 };
 
+const accessToken = window.JAWG_TOKEN;
 
 var map = L.map('map').setView([51.0504, 13.7373], 14);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
+var Jawg_Sunny = L.tileLayer(
+  'https://tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.png?access-token={accessToken}',
+  {
+    attribution: '<a href="https://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    minZoom: 0,
+    maxZoom: 22,
+    accessToken: accessToken
+  }
+);
+
+Jawg_Sunny.addTo(map);
 
 let metadata = {};
 let allRows = [];
@@ -39,11 +61,47 @@ let currentYear = 0;
 
 let pointLayer = L.layerGroup().addTo(map);
 let osmLayerGroup = L.layerGroup().addTo(map);
-let dresdenLayer = null;
+let osmFeatureLayers = [];
+
+function getColorByCertainty(entries) {
+  if (!entries || entries.length === 0) return COLORS.uncertain;
+
+  // If at least one entry is uncertain → mark as uncertain
+  const hasUncertain = entries.some(e =>
+    (e.Certainty || "").toLowerCase() === "uncertain"
+  );
+
+  return hasUncertain ? COLORS.uncertain : COLORS.certain;
+}
 
 // -----------------------------
 // 0. TIME SLIDER UI
 // -----------------------------
+
+function generateYearTicks(minYear, maxYear) {
+
+  let container = document.getElementById("timelineTicks");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  for (let y = Math.ceil(minYear / 50) * 50; y <= maxYear; y += 50) {
+
+    let percent = ((y - minYear) / (maxYear - minYear)) * 100;
+
+    let tick = document.createElement("div");
+
+    tick.style.position = "absolute";
+    tick.style.left = percent + "%";
+    tick.style.transform = "translateX(-50%)";
+    tick.style.fontSize = "11px";
+
+    tick.innerText = y;
+
+    container.appendChild(tick);
+  }
+}
+
 let sliderControl = L.control({ position: "topright" });
 
 sliderControl.onAdd = function() {
@@ -52,33 +110,56 @@ sliderControl.onAdd = function() {
   div.innerHTML = `
     <div style="background:white;padding:10px; min-width:160px;">
       
-      <input type="range" id="yearSlider" step="1">
-      <div style="margin-bottom:8px;">
-        Year: <span id="yearLabel">1560</span>
+    <input type="range" id="yearSlider" step="1" style="width:500px;">
+      <div style="background:white;padding:10px; min-width:420px;">
+
+
+        <!-- 50-year timeline markers -->
+        <div id="timelineTicks"
+            style="
+            position: relative;
+            height:25px;
+            margin-top:6px;
+            ">
+        </div>
+
+            
+        <div style="margin-bottom:8px;">
+          Year: <span id="yearLabel">1560</span>
+        </div>
+
       </div>
 
       <!-- Legend -->
       <div style="display:flex; align-items:center; gap:6px; margin-top:6px;">
+      <div style="display:flex; align-items:center; gap:6px; margin-top:6px;">
         <div style="
-          width:12px;
-          height:12px;
+          width:15px;
+          height:15px;
           border-radius:50%;
           background:${COLORS.certain};
-          opacity: 0.5;
+          opacity:0.7;
           border:1px solid ${COLORS.certain};
         "></div>
-        <span style="font-size:13px;">certain of location <br> (historical and modern names match)</span>
+        <span style="font-size:13px;">
+          certain of location <br>
+          (historical and modern names match)
+        </span>
       </div>
-            <div style="display:flex; align-items:center; gap:6px; margin-top:6px;">
+
+      <div style="display:flex; align-items:center; gap:6px; margin-top:6px;">
         <div style="
-          width:12px;
-          height:12px;
+          width:15px;
+          height:15px;
           border-radius:50%;
           background:${COLORS.uncertain};
-          opacity: 0.5;
-          border:1px solid ${COLORS.certain};
+          opacity:0.7;
+          border:1px solid ${COLORS.uncertain};
         "></div>
-        <span style="font-size:13px;">unsure of location <br> (historical name cannot be certainly matched)</span>
+        <span style="font-size:13px;">
+          unsure of location <br>
+          (historical name cannot be certainly matched)
+        </span>
       </div>
 
     </div>
@@ -95,7 +176,7 @@ sliderControl.addTo(map);
 // -----------------------------
 // 1. LOAD CSV
 // -----------------------------
-Papa.parse("full_places_dresden_with_osm_flag.csv", {
+Papa.parse("places_dresden_combined_with_sentences_with_osm_flag.csv", {
   download: true,
   header: true,
   delimiter: "|",
@@ -109,6 +190,7 @@ Papa.parse("full_places_dresden_with_osm_flag.csv", {
 
     let minYear = Math.min(...years);
     let maxYear = Math.max(...years);
+    generateYearTicks(minYear, maxYear);
 
     let slider = document.getElementById("yearSlider");
 
@@ -133,6 +215,7 @@ Papa.parse("full_places_dresden_with_osm_flag.csv", {
 
     document.getElementById("yearSlider").addEventListener("input", function(e) {
       currentYear = parseInt(e.target.value);
+      generateSliderIndicatorPosition(minYear, maxYear);
       document.getElementById("yearLabel").innerText = currentYear;
       updateMap();
     });
@@ -142,6 +225,57 @@ Papa.parse("full_places_dresden_with_osm_flag.csv", {
   }
 });
 
+function renderMentionChart(entityName, container) {
+
+  if (!container) return;
+
+  let bins = {};
+
+  let entityLower = entityName.toLowerCase();
+
+  // Use your already loaded CSV data
+  allRows.forEach(row => {
+
+    if (!row.Entity) return;
+
+    if (row.Entity.toLowerCase() !== entityLower) return;
+
+    let year = parseInt(row.Year);
+    if (isNaN(year)) return;
+
+    let bin = Math.floor(year / 50) * 50;
+
+    bins[bin] = (bins[bin] || 0) + 1;
+  });
+
+  let labels = Object.keys(bins).sort((a,b)=>a-b);
+  let values = labels.map(l => bins[l]);
+
+  new Chart(container, {
+    type: "bar",
+    data: {
+      labels: labels,
+      datasets: [{
+        data: values
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            precision: 0
+          }
+        }
+      }
+    }
+  });
+}
+
 // -----------------------------
 // 2. POPUP BUILDER
 // -----------------------------
@@ -150,30 +284,57 @@ function buildPopupContent(entries) {
   if (!entries || entries.length === 0) {
     return "<b>No metadata available</b>";
   }
+  
 
   let html = `<div class="popup-title">${entries[0].geocode_query}</div>`;
 
   entries.forEach((data, index) => {
 
-    html += `
-      <div class="popup-entry">
-        <div class="popup-subtitle">
+  html += `
+  <canvas class="mentionChart" height="120"></canvas>
+    <div class="popup-entry">
+      <div class="popup-subtitle">
         ${data.Author || ""} (${data.Year ? parseInt(data.Year) : ""})
-        </div>
-        
-        <div><i>${data["historical spelling"] || ""}</i></div>
-
-        <div style="font-size:12px; margin-top:6px;">
-        <div><b>Quote:</b> <i>${data["Full Sentence"] || ""}</i></div>
-
-          <div><b>Title:</b> ${data.Title || ""}</div>
-          <div><b>Journey Time:</b> ${data["Travel Period"] || ""}</div>
-          <div><b>Page:</b> ${data.Pages || ""}</div>
-          ${data.Link ? `<div><a href="${data.Link}" target="_blank">Open Source</a></div>` : ""}
-        </div>
       </div>
-      ${index < entries.length - 1 ? "<hr>" : ""}
-    `;
+
+      <div><i>${data["historical spelling"] || ""}</i></div>
+
+      <div class="popup-meta">
+        <div class="popup-row">
+          <div class="popup-label">Quote</div>
+          <div class="popup-value"><i>${data["Full Sentence"] || ""}</i></div>
+        </div>
+
+        <div class="popup-row">
+          <div class="popup-label">Title</div>
+          <div class="popup-value">${data.Title || ""}</div>
+        </div>
+
+        <div class="popup-row">
+          <div class="popup-label">Journey Time</div>
+          <div class="popup-value">${data["Travel Period"] || ""}</div>
+        </div>
+
+        <div class="popup-row">
+          <div class="popup-label">Page</div>
+          <div class="popup-value">${data.Pages || ""}</div>
+        </div>
+
+        ${
+          data.Link
+            ? `
+        <div class="popup-row">
+          <div class="popup-label">Source</div>
+          <div class="popup-value">
+            <a href="${data.Citable_URL}" target="_blank">Open on data provider's page</a>
+          </div>
+        </div>`
+            : ""
+        }
+      </div>
+    </div>
+    ${index < entries.length - 1 ? "<hr>" : ""}
+  `;
   });
 
   return `<div class="popup-scroll-container">${html}</div>`;
@@ -186,45 +347,17 @@ function updateMap() {
 
   pointLayer.clearLayers();
   osmLayerGroup.clearLayers();
-  if (dresdenLayer) {
-    map.removeLayer(dresdenLayer);
-  }
 
+  // Load OSM layers first
   loadOSMFeatures();
-  plotUnmatchedPoints();
-  highlightDresden();
-  updateSidebar();
+
+  // Wait a bit for data to load
+  setTimeout(() => {
+    plotUnmatchedPoints();
+    renderDresdenSidebar();
+  }, 300);
 }
 
-// -----------------------------
-// 4. DRESDEN CITY CENTER HIGHLIGHT
-// -----------------------------
-function highlightDresden() {
-
-  if (!metadata["Dresden"]) return;
-
-  let validEntries = metadata["Dresden"].filter(e =>
-    parseInt(e.Year) <= currentYear
-  );
-
-  if (validEntries.length === 0) return;
-
-  fetch("osm_features/dresden_neustadt_altstadt.geojson")
-    .then(res => res.json())
-    .then(data => {
-
-      dresdenLayer = L.geoJSON(data, {
-        style: {
-          color: COLORS.certain,
-          fillColor: COLORS.certain,
-          weight: 2,
-          fillOpacity: 0.3
-        }
-      }).addTo(map);
-
-      dresdenLayer.bindPopup(buildPopupContent(validEntries));
-    });
-}
 // -----------------------------
 // HISTORICAL MAP 1529 OVERLAY
 // -----------------------------
@@ -245,16 +378,108 @@ fetch("osm_features/historical_maps/1529.geojson")
 
   });
 
+//-------------------------------
+// Dresden in sidebar
+///-------------------------------
+function renderDresdenSidebar() {
+
+  console.log("Dresden entries:", metadata["Dresden"]);
+  console.log("Current year:", currentYear);
+
+  const container = document.getElementById("dresdenContent");
+  container.innerHTML = "";
+
+  let cityKey = Object.keys(metadata).find(k =>
+  k.toLowerCase() === "dresden"
+  );
+
+  // Filter by current slider year
+  let validEntries = metadata[cityKey]
+    .filter(e => !isNaN(parseInt(e.Year)))
+    .filter(e => parseInt(e.Year) <= currentYear)
+    .sort((a, b) => parseInt(a.Year) - parseInt(b.Year)); // chronological order
+
+  if (validEntries.length === 0) {
+    container.innerHTML = "<i>No Dresden mentions up to this year.</i>";
+    return;
+  }
+
+  container.innerHTML = buildPopupContent(validEntries);
+}
+
+function getFeatureTemporalState(entries) {
+
+  if (!entries || entries.length === 0) {
+    return {
+      opacity: 0,
+      firstYear: null
+    };
+  }
+
+  let years = entries
+    .map(e => parseInt(e.Year))
+    .filter(y => !isNaN(y));
+
+  if (years.length === 0) {
+    return {
+      opacity: 0,
+      firstYear: null
+    };
+  }
+
+  let firstYear = Math.min(...years);
+
+  // Feature should appear only after first mention
+  if (currentYear < firstYear) {
+    return {
+      opacity: 0,
+      firstYear: firstYear
+    };
+  }
+
+  // Fade after appearance
+  let age = currentYear - firstYear;
+  let maxFade = 80;
+
+  let opacity = 1 - (age / maxFade);
+
+  return {
+    opacity: Math.max(0.15, Math.min(1, opacity)),
+    firstYear: firstYear
+  };
+}
+
 // -----------------------------
 // 5. LOAD OSM FEATURES (Filtered)
 // -----------------------------
-function loadGeoJSON(file, styleObj) {
+function loadGeoJSON(file, baseStyle) {
   fetch(file)
     .then(res => res.json())
     .then(data => {
 
       L.geoJSON(data, {
-        style: styleObj,
+        style: function(feature) {
+
+          let name = feature.properties.name;
+          let entries = metadata[name];
+
+          if (!entries) return baseStyle;
+
+          let validEntries = entries.filter(e =>
+            parseInt(e.Year) <= currentYear
+          );
+
+          if (validEntries.length === 0) return baseStyle;
+
+          let dynamicColor = getColorByCertainty(validEntries);
+
+          return {
+            ...baseStyle,
+            color: dynamicColor,
+            fillColor: dynamicColor
+          };
+        },
+
         onEachFeature: function(feature, layer) {
 
           let name = feature.properties.name;
@@ -262,7 +487,6 @@ function loadGeoJSON(file, styleObj) {
 
           if (!entries) return;
 
-          // filter by year
           let validEntries = entries.filter(e =>
             parseInt(e.Year) <= currentYear
           );
@@ -270,35 +494,146 @@ function loadGeoJSON(file, styleObj) {
           if (validEntries.length === 0) return;
 
           layer.bindPopup(buildPopupContent(validEntries));
+
+          layer.on("popupopen", function(e) {
+
+            let popupNode = e.popup.getElement();
+            let canvas = popupNode.querySelector(".mentionChart");
+
+            renderMentionChart(validEntries, canvas);
+
+          });
           layer.addTo(osmLayerGroup);
         }
       });
     });
 }
 
-function loadOSMFeatures() {
+function getFeatureOpacity(entries) {
 
-  loadGeoJSON("osm_features/streets.geojson",
-    { color: COLORS.certain, weight: 3 });
+  if (!entries || entries.length === 0) return 0.1;
 
-  loadGeoJSON("osm_features/buildings.geojson",
-    { color: COLORS.certain, weight: 1, fillOpacity: 0.3 });
+  let years = entries
+    .map(e => parseInt(e.Year))
+    .filter(y => !isNaN(y) && y <= currentYear);
 
-  loadGeoJSON("osm_features/bridges.geojson",
-    { color: COLORS.certain, weight: 4 });
+  if (years.length === 0) return 0.1;
 
-  loadGeoJSON("osm_features/places.geojson",
-    { color: COLORS.certain, weight: 2, fillOpacity: 0.4 });
-  
-  loadGeoJSON("osm_features/rivers.geojson",
-    { color: COLORS.certain, weight: 2, fillOpacity: 0.4 });
-  
-    loadGeoJSON("osm_features/squares.geojson",
-    { color: COLORS.certain, weight: 2, fillOpacity: 0.4 });
+  let latestYear = Math.max(...years);
+
+  let age = currentYear - latestYear;
+  let maxFade = 80;
+
+  let opacity = 1 - (age / maxFade);
+
+  return Math.max(0.15, Math.min(1, opacity));
 }
 
+function loadOSMFeatures() {
+
+  const featureFiles = [
+    "osm_features/streets.geojson",
+    "osm_features/buildings.geojson",
+    "osm_features/bridges.geojson",
+    "osm_features/rivers.geojson",
+    "osm_features/squares.geojson",
+    "osm_features/parks.geojson",
+    "osm_features/water.geojson",
+    "osm_features/historic_buildings.geojson",
+    //"osm_features/districts.geojson",
+  ];
+
+  featureFiles.forEach(file => {
+
+    fetch(file)
+      .then(res => res.json())
+      .then(data => {
+
+        let layer = L.geoJSON(data, {
+
+          style: function(feature) {
+
+            let name = feature.properties?.name;
+            let entries = metadata[name];
+
+            if (!entries) {
+              return {
+                color: COLORS.certain,
+                weight: 2,
+                opacity: 0.15,
+                fillOpacity: 0.1
+              };
+            }
+
+            let temporal = getFeatureTemporalState(entries);
+
+            let validEntries = entries.filter(e =>
+              parseInt(e.Year) <= currentYear
+            );
+
+            let dynamicColor = getColorByCertainty(validEntries);
+            let dynamicOpacity = temporal.opacity;
+
+            return {
+              color: dynamicColor,
+              weight: 2,
+              opacity: dynamicOpacity,
+              fillColor: dynamicColor,
+              fillOpacity: dynamicOpacity * 0.6
+            };
+          },
+
+          pointToLayer: function(feature, latlng) {
+
+            let name = feature.properties?.name;
+            let entries = metadata[name] || [];
+
+            let validEntries = entries.filter(e =>
+              parseInt(e.Year) <= currentYear
+            );
+
+            let dynamicColor = getColorByCertainty(validEntries);
+            let dynamicOpacity = getFeatureOpacity(validEntries);
+
+            return L.circleMarker(latlng, {
+              radius: 8,
+              color: dynamicColor,
+              fillColor: dynamicColor,
+              fillOpacity: dynamicOpacity,
+              opacity: dynamicOpacity,
+              weight: 1
+            });
+          },
+
+          onEachFeature: function(feature, layer) {
+
+            let name = feature.properties?.name;
+            let entries = metadata[name];
+
+            if (!entries) return;
+
+            let validEntries = entries.filter(e =>
+              parseInt(e.Year) <= currentYear
+            );
+
+            if (validEntries.length === 0) return;
+
+            layer.bindPopup(buildPopupContent(validEntries));
+          }
+
+        });
+
+        osmFeatureLayers.push(layer);
+        layer.addTo(osmLayerGroup);
+
+      });
+
+  });
+}
+
+
 // -----------------------------
-// 6. UNMATCHED POINTS (Dark Blue + Transparent)
+// 6. UNMATCHED POINTS
 // -----------------------------
 function plotUnmatchedPoints() {
 
@@ -311,78 +646,53 @@ function plotUnmatchedPoints() {
 
       if (parseInt(row.Year) > currentYear) return;
 
+      let entries = metadata[row.Entity] || [];
+      let validEntries = entries.filter(e =>
+        parseInt(e.Year) <= currentYear
+      );
+
+      let dynamicColor = getColorByCertainty(validEntries);
+      let dynamicOpacity = getFeatureOpacity(validEntries);
+
       let marker = L.circleMarker(
         [parseFloat(row.latitude), parseFloat(row.longitude)],
         {
-          radius: 6,
-          color: COLORS.certain,
-          fillColor: COLORS.certain,
-          fillOpacity: 0.5
+          radius: 8,
+          color: dynamicColor,
+          fillColor: dynamicColor,
+          fillOpacity: dynamicOpacity,
+          opacity: dynamicOpacity,
+          weight: 1
         }
       );
 
       marker.bindPopup(buildPopupContent(metadata[row.Entity]));
       marker.addTo(pointLayer);
     }
-  });
-}
 
-// -----------------------------
-// 7. UPDATE SIDEBAR WITH UNRESOLVED PLACES
-// -----------------------------
-function updateSidebar() {
-  const sidebarContent = document.getElementById("sidebarContent");
-  sidebarContent.innerHTML = "";
-
-  // Collect all places with missing geolocation
-  const unresolvedPlaces = {};
-
-  allRows.forEach(row => {
-    if (row.Entity === "Dresden") return;
-
-    const hasCoordinates = row.latitude && row.longitude;
-    
-    if (!hasCoordinates && parseInt(row.Year) <= currentYear) {
-      if (!unresolvedPlaces[row.Entity]) {
-        unresolvedPlaces[row.Entity] = [];
-      }
-      unresolvedPlaces[row.Entity].push(row);
-    }
   });
 
-  // If no unresolved places, show a message
-  if (Object.keys(unresolvedPlaces).length === 0) {
-    sidebarContent.innerHTML = '<div style="padding: 16px; color: #999; font-size: 13px; text-align: center;">All places geolocated for this year</div>';
-    return;
-  }
-
-  // Create sidebar items for each unresolved place
-  Object.keys(unresolvedPlaces).sort().forEach(placeName => {
-    const entries = unresolvedPlaces[placeName];
-    const latestYear = Math.max(...entries.map(e => parseInt(e.Year)));
-    const count = entries.length;
-
-    const item = document.createElement("div");
-    item.className = "sidebar-item";
-    item.innerHTML = `
-      <div class="sidebar-item-name">${placeName}</div>
-      <div class="sidebar-item-info">
-        <div>Entries: ${count}</div>
-        <div>Latest year: ${latestYear}</div>
-      </div>
-    `;
-
-    item.addEventListener("click", () => {
-      // Show popup with details
-      const popup = buildPopupContent(entries);
-      alert(`${placeName}\n\nMissing geolocation data. ${count} mention(s) found.`);
-    });
-
-    sidebarContent.appendChild(item);
-  });
 }
 
 </script>
 
 </body>
+<footer class="site-footer">
+  <div class="footer-content">
+
+    <div>
+      <strong>Deep Mapping Dresden</strong><br>
+      Travelogues 1604–1900
+    </div>
+
+    <div>
+        See project on <a href="https://github.com/LuisePohlmann/Deep-Mapping-Dresden/">Github</a>
+    </div>
+
+    <div>
+      © Luise Pohlmann, 2026
+    </div>
+
+  </div>
+</footer>
 </html>

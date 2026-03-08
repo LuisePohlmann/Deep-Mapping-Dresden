@@ -1,8 +1,9 @@
 import osmnx as ox
 import pandas as pd
+from rapidfuzz import process, fuzz
 
 # -------------------------
-# 1. Load input CSV
+# Load input CSV
 # -------------------------
 df = pd.read_csv("Data/Geolocation_Metadata/places_dresden_combined_with_sentences.csv", sep="|")
 
@@ -11,8 +12,36 @@ PLACE_NAME = "Dresden, Germany"
 # Keep track of all found entity names
 found_entities = set()
 
+#--------------------------
+# Fuzzy matching
+#--------------------------
+def fuzzy_match_entities(query_list, candidate_list, threshold=80):
+    """
+    Fuzzy matches historical spellings to OSM names.
+
+    Returns list of matched names.
+    """
+
+    matches = []
+
+    for query in query_list:
+
+        if pd.isna(query):
+            continue
+
+        result = process.extractOne(
+            query,
+            candidate_list,
+            scorer=fuzz.token_sort_ratio
+        )
+
+        if result and result[1] >= threshold:
+            matches.append(result[0])
+
+    return list(set(matches))
+
 # -------------------------
-# 2. STREET NETWORK (edges)
+# STREET NETWORK (edges)
 # -------------------------
 graph = ox.graph_from_place(PLACE_NAME)
 nodes, edges = ox.graph_to_gdfs(graph)
@@ -28,7 +57,7 @@ streets.to_file("osm_features/streets.geojson", driver="GeoJSON")
 print("Streets found:", len(streets))
 
 # -------------------------
-# 3. SQUARES
+# SQUARES
 # -------------------------
 square_tags = {"place": "square"}
 squares = ox.features_from_place(PLACE_NAME, square_tags)
@@ -43,7 +72,7 @@ squares.to_file("osm_features/squares.geojson", driver="GeoJSON")
 print("Squares found:", len(squares))
 
 # -------------------------
-# 4. BRIDGES
+# BRIDGES
 # -------------------------
 bridge_tags = {"bridge": True}
 bridges = ox.features_from_place(PLACE_NAME, bridge_tags)
@@ -58,7 +87,7 @@ bridges.to_file("osm_features/bridges.geojson", driver="GeoJSON")
 print("Bridges found:", len(bridges))
 
 # -------------------------
-# 5. BUILDINGS
+# BUILDINGS
 # -------------------------
 building_tags = {"building": True}
 buildings = ox.features_from_place(PLACE_NAME, building_tags)
@@ -73,7 +102,34 @@ buildings.to_file("osm_features/buildings.geojson", driver="GeoJSON")
 print("Buildings found:", len(buildings))
 
 # -------------------------
-# 6. RIVERS
+# HISTORIC BUILDINGS
+# -------------------------
+
+historic_tags = {
+    "historic": True
+}
+
+historic_buildings = ox.features_from_place(PLACE_NAME, historic_tags)
+
+# Optional filtering by your dataset names
+if "name" in historic_buildings.columns:
+    historic_buildings = historic_buildings[
+        historic_buildings["name"].notna()
+    ]
+
+    # Fuzzy matching will be applied later (do NOT filter strictly here)
+    found_entities.update(historic_buildings["name"].dropna().unique())
+
+historic_buildings.to_csv("osm_features/historic_buildings.csv")
+historic_buildings.to_file(
+    "osm_features/historic_buildings.geojson",
+    driver="GeoJSON"
+)
+
+print("Historic buildings found:", len(historic_buildings))
+
+# -------------------------
+# RIVERS
 # -------------------------
 river_tags = {"waterway": ["river", "stream", "canal"]}
 rivers = ox.features_from_place(PLACE_NAME, river_tags)
@@ -87,111 +143,80 @@ rivers.to_file("osm_features/rivers.geojson", driver="GeoJSON")
 
 print("Rivers found:", len(rivers))
 
-# -------------------------
-# 7. Add OSM match column to copy of CSV
-# -------------------------
+water_tags = {
+    "natural": ["water", "wetland"],
+    "water": ["lake", "reservoir"]
+}
 
-df["osm_feature_found"] = df["geocode_query"].isin(found_entities)
+water = ox.features_from_place(PLACE_NAME, water_tags)
+
+if "name" in water.columns:
+    water = water[water["name"].isin(df["geocode_query"])]
+    found_entities.update(water["name"].unique())
+
+water.to_csv("osm_features/water.csv")
+water.to_file("osm_features/water.geojson", driver="GeoJSON")
+
+print("Water bodies found:", len(water))
+
+# -------------------------
+# GREEN AREAS / PARKS
+# -------------------------
+green_tags = {
+    "leisure": ["park", "garden", "recreation_ground"],
+    "landuse": ["grass", "forest"]
+}
+
+parks = ox.features_from_place(PLACE_NAME, green_tags)
+
+if "name" in parks.columns:
+    parks = parks[parks["name"].isin(df["geocode_query"])]
+    found_entities.update(parks["name"].unique())
+
+parks.to_csv("osm_features/parks.csv")
+parks.to_file("osm_features/parks.geojson", driver="GeoJSON")
+
+print("Parks / green areas found:", len(parks))
+
+# -------------------------
+# CITY DISTRICTS / QUARTERS
+# -------------------------
+district_tags = {
+    "boundary": "administrative",
+    "place": ["neighbourhood", "suburb", "quarter"]
+}
+
+districts = ox.features_from_place(PLACE_NAME, district_tags)
+
+if "name" in districts.columns:
+    districts = districts[districts["name"].isin(df["geocode_query"])]
+    found_entities.update(districts["name"].unique())
+
+districts.to_csv("osm_features/districts.csv")
+districts.to_file("osm_features/districts.geojson", driver="GeoJSON")
+
+print("Districts / neighborhoods found:", len(districts))
+
+# -------------------------
+# Add OSM match column to copy of CSV
+# -------------------------
+all_osm_names = list(found_entities)
+df_unique_queries = df["geocode_query"].dropna().unique()
+
+fuzzy_matches = fuzzy_match_entities(
+    df_unique_queries,
+    all_osm_names,
+    threshold=85   # increase = stricter matching
+)
+
+df["osm_feature_found"] = df["geocode_query"].apply(
+    lambda x: x in fuzzy_matches
+)
 
 df.to_csv("places_dresden_combined_with_sentences_with_osm_flag.csv", index=False, sep="|")
 
 print("Matched entities:", len(found_entities))
 print("Updated CSV saved as places_dresden_combined_with_sentences_with_osm_flag.csv")
-
-import osmnx as ox
-import geopandas as gpd
-import pandas as pd
-
-# --------------------------------------------------
-# SETTINGS
-# --------------------------------------------------
-PLACE_NAME = "Dresden, Germany"
-OUTPUT_FOLDER = "osm_features/"
-
-# --------------------------------------------------
-# HELPER FUNCTION
-# --------------------------------------------------
-def export_boundary(query_name, filename, simplify_tolerance=0.0001):
-    print(f"Downloading: {query_name}")
-
-    gdf = ox.geocode_to_gdf(query_name)
-
-    # Keep only polygon geometries
-    gdf = gdf[gdf.geometry.type.isin(["Polygon", "MultiPolygon"])]
-
-    # Dissolve into single geometry
-    gdf = gdf.dissolve()
-
-    # Optional simplification (important for web maps)
-    gdf["geometry"] = gdf.simplify(simplify_tolerance)
-
-    gdf.to_file(
-        OUTPUT_FOLDER + filename,
-        driver="GeoJSON"
-    )
-
-    print(f"Saved: {filename}")
-    print("CRS:", gdf.crs)
-    print("-" * 40)
-
-
-# ==================================================
-# 1 FULL BOUNDARY OF DRESDEN
-# ==================================================
-
-export_boundary(
-    "Dresden, Germany",
-    "dresden_full_boundary.geojson"
-)
-
-
-# ==================================================
-# 2 INNER HISTORICAL CORE
-# ==================================================
-
-innere_altstadt = ox.geocode_to_gdf("Innere Altstadt, Dresden, Germany")
-inner_old = innere_altstadt[innere_altstadt.geometry.type.isin(["Polygon", "MultiPolygon"])]
-inner_old = inner_old.dissolve()
-inner_old["geometry"] = inner_old.simplify(0.0001)
-
-inner_old.to_file(
-    OUTPUT_FOLDER + "innere_altstadt.geojson",
-    driver="GeoJSON"
-)
-
-print("Saved: innere_altstadt.geojson")
-
-innere_neustadt = ox.geocode_to_gdf("Innere Neustadt, Dresden, Germany")
-inner_new = innere_neustadt[innere_neustadt.geometry.type.isin(["Polygon", "MultiPolygon"])]
-inner_new = inner_new.dissolve()
-inner_new["geometry"] = inner_new.simplify(0.0001)
-
-inner_new.to_file(
-    OUTPUT_FOLDER + "innere_neustadt.geojson",
-    driver="GeoJSON"
-)
-
-print("Saved: innere_neustadt.geojson")
-
-historical_core = gpd.GeoDataFrame(
-    pd.concat([innere_altstadt, innere_neustadt], ignore_index=True),
-    crs=innere_altstadt.crs
-)
-
-historical_core = historical_core[
-    historical_core.geometry.type.isin(["Polygon", "MultiPolygon"])
-]
-
-historical_core = historical_core.dissolve()
-historical_core["geometry"] = historical_core.simplify(0.00005)
-
-historical_core.to_file(
-    OUTPUT_FOLDER + "dresden_neustadt_altstadt.geojson",
-    driver="GeoJSON"
-)
-
-print("Saved: dresden_neustadt_altstadt.geojson")
-print("-" * 40)
 
 print("All boundaries exported successfully.")
 print("Done.")

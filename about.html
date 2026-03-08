@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>About – Deep Mapping Dresden </title>
+
+<link rel="stylesheet" href="css/custom.css"/>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-title">Deep Mapping Dresden - Travelogues 1604-1900 </div>
+  <nav class="header-nav">
+    <a href="index.html"><b>Map</b></a>
+  </nav>
+</header>
+
+<script>
+
+fetch("bibliography.txt")
+  .then(response => response.text())
+  .then(text => {
+
+    let container = document.getElementById("bibliographyContainer");
+
+    let lines = text.split("\n").filter(l => l.trim() !== "");
+
+    let html = "<h2>Bibliography of Travelogues</h2><ul>";
+
+    lines.forEach(line => {
+
+      // Split into citation parts
+      let parts = line.split(".");
+
+      if (parts.length < 4) {
+        html += `<li>${line}</li>`;
+        return;
+      }
+
+      let author = parts[0].trim();
+      let year = parts[1].trim();
+      let title = parts[2].trim();
+
+      // Link may contain periods, so reconstruct from remainder
+      let link = line.substring(
+        line.indexOf(parts[3])
+      ).trim();
+
+      html += `
+        <li>
+          ${author}. ${year}. ${title}.
+          <a href="${link}" target="_blank">Source</a>
+        </li>
+      `;
+
+    });
+
+    html += "</ul>";
+
+    container.innerHTML = html;
+
+  })
+  .catch(err => {
+    document.getElementById("bibliographyContainer").innerHTML =
+      "Bibliography could not be loaded.";
+    console.error(err);
+  });
+
+</script>
+
+<div class="about-container">
+
+<h1>About This Project</h1>
+
+<p>
+This interactive map visualizes place mentions in historical travel writings about Dresden.
+The map allows exploration of how locations were described by travelers over time.
+The map was created as part of the study program "Digital Humanitiies M.A." by Luise Pohlmann in March 2026.
+</p>
+
+<h2>Data</h2>
+
+<p>
+The travelogues used for this visualisation com from the digital collection of travelogues concerning Saxony provided by the 
+<a href="https://reise.isgv.de/" target="_blank">Institut für Sächsische Geschichte und Volkskunde (isgv)</a>. <br>
+The Metadata was scraped from their site and the images of the travelogue pages were transribed using a large language model.
+Next, place names were extracted using a different large language model. Finally, the place names were georeferenced by looking up their names either
+using either Open Street Map, or in cases where this did not yield results, using nominatim. 
+Some places could not be georeferenced, in these cases, a large language model was used to try to correct transcription errors or modernize the spelling. 
+These are the places marked as "uncertain" on the map.
+Overall 1025 place mentions from 67 travelogues written between 1604 and 1900 are included (see fulll ist in the bibliography below). <br>
+
+For further information on the data and scripts, see the repository for this project on <a href="https://github.com/LuisePohlmann/Deep-Mapping-Dresden/" target="_blank">github</a>
+or send me an email <a href="mailto: Luise.Pohlmann01@stud.uni-goettingen.de">Luise Pohlmann</a>. 
+ 
+</p>
+
+<h2>How to Use</h2>
+
+<ul>
+<li>Use the year slider to explore references chronologically.</li>
+<li>Click map features to read quotes mentioning that place.</li>
+<li>The sidebar shows what people wrote about "Dresden" in general.</li>
+<li>The points fade in color as their mentions fade into the past.</li>
+</ul>
+
+<div id="bibliographyContainer" style="max-width:900px; margin:40px auto; line-height:1.6;">
+<p>The following travelogues and their metadata were used for this project.</p>
+  Loading bibliography...
+</div>
+
+</div>
+
+</body>
+<footer class="site-footer">
+  <div class="footer-content">
+
+    <div>
+      <strong>Deep Mapping Dresden</strong><br>
+      Travelogues 1604–1900
+    </div>
+
+    <div>
+        See project on <a href="https://github.com/LuisePohlmann/Deep-Mapping-Dresden/">Github</a>
+    </div>
+
+    <div>
+      © Luise Pohlmann, 2026
+    </div>
+
+  </div>
+</footer>
+</html>
