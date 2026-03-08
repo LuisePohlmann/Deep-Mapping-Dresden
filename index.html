@@ -215,7 +215,6 @@ Papa.parse("places_dresden_combined_with_sentences_with_osm_flag.csv", {
 
     document.getElementById("yearSlider").addEventListener("input", function(e) {
       currentYear = parseInt(e.target.value);
-      generateSliderIndicatorPosition(minYear, maxYear);
       document.getElementById("yearLabel").innerText = currentYear;
       updateMap();
     });
@@ -231,7 +230,14 @@ function renderMentionChart(entityName, container) {
 
   let bins = {};
 
-  let entityLower = entityName.toLowerCase();
+  // allow callers to send either a name string or the array of entries
+  let entityLower;
+  if (Array.isArray(entityName)) {
+    if (entityName.length === 0) return;
+    entityLower = (entityName[0].Entity || "").toString().toLowerCase();
+  } else {
+    entityLower = entityName.toString().toLowerCase();
+  }
 
   // Use your already loaded CSV data
   allRows.forEach(row => {
@@ -348,6 +354,9 @@ function updateMap() {
   pointLayer.clearLayers();
   osmLayerGroup.clearLayers();
 
+  // recalc which boundaries should be visible
+  updateBoundaries();
+
   // Load OSM layers first
   loadOSMFeatures();
 
@@ -359,24 +368,78 @@ function updateMap() {
 }
 
 // -----------------------------
-// HISTORICAL MAP 1529 OVERLAY
+// HISTORICAL CITY BOUNDARIES
 // -----------------------------
-let historical1529Layer = null;
+// four layers: two for the 1529 walls, two for the post‑1750 walls.
+let boundaryLayers = {
+  altstadt1529: null,
+  neustadt1529: null,
+  altstadt1750: null,
+  neustadt1750: null
+};
 
-fetch("osm_features/historical_maps/1529.geojson")
-  .then(res => res.json())
-  .then(data => {
+const boundaryStyle = {
+  color: "#666666",
+  weight: 2,
+  opacity: 0.7,
+  fillColor: "#999999",
+  fillOpacity: 0.2
+};
 
-    historical1529Layer = L.geoJSON(data, {
-      style: {
-        color: "#000000",      // line color
-        weight: 1,
-        opacity: 0.5,          // line opacity
-        fillOpacity: 0.5       // polygon opacity
+// helper to load a geojson file and create a layer
+const boundaryYear = {
+  altstadt1529: 1529,
+  neustadt1529: 1529,
+  altstadt1750: 1750,
+  neustadt1750: 1750
+};
+
+function loadBoundaryLayer(path, targetKey) {
+  fetch(path)
+    .then(res => res.json())
+    .then(data => {
+      let year = boundaryYear[targetKey] || "";
+      let layer = L.geoJSON(data, {
+        style: boundaryStyle,
+        onEachFeature: function(feature, layer) {
+          layer.bindPopup(`Befestigungsanlagen nach Karte von ${year}`);
+        }
+      });
+      boundaryLayers[targetKey] = layer;
+      // add 1529 layers immediately (they should be visible at startup)
+      if (targetKey.endsWith("1529")) {
+        layer.addTo(map);
       }
-    }).addTo(map);
+    });
+}
 
-  });
+// load all four boundary files
+loadBoundaryLayer("Data/historical_maps_dresden/Wall_Altstadt_1529_mit_Toren.geojson", "altstadt1529");
+loadBoundaryLayer("Data/historical_maps_dresden/Wall_Neustadt_1529_mit_Toren.geojson", "neustadt1529");
+loadBoundaryLayer("Data/historical_maps_dresden/Wall_Altstadt_1750_mit_Toren.geojson", "altstadt1750");
+loadBoundaryLayer("Data/historical_maps_dresden/Wall_Neustadt_1750_mit_Toren.geojson", "neustadt1750");
+
+// call this whenever the slider year changes
+function updateBoundaries() {
+  if (currentYear < 1750) {
+    // show only the 1529 pair
+    if (boundaryLayers.altstadt1529) boundaryLayers.altstadt1529.addTo(map);
+    if (boundaryLayers.neustadt1529) boundaryLayers.neustadt1529.addTo(map);
+    if (boundaryLayers.altstadt1750) map.removeLayer(boundaryLayers.altstadt1750);
+    if (boundaryLayers.neustadt1750) map.removeLayer(boundaryLayers.neustadt1750);
+  } else if (currentYear < 1820) {
+    // show only the post‑1750 pair until they disappear in 1820
+    if (boundaryLayers.altstadt1529) map.removeLayer(boundaryLayers.altstadt1529);
+    if (boundaryLayers.neustadt1529) map.removeLayer(boundaryLayers.neustadt1529);
+    if (boundaryLayers.altstadt1750) boundaryLayers.altstadt1750.addTo(map);
+    if (boundaryLayers.neustadt1750) boundaryLayers.neustadt1750.addTo(map);
+  } else {
+    // from 1820 onward remove all boundary lines
+    Object.values(boundaryLayers).forEach(l => {
+      if (l) map.removeLayer(l);
+    });
+  }
+}
 
 //-------------------------------
 // Dresden in sidebar
@@ -500,7 +563,8 @@ function loadGeoJSON(file, baseStyle) {
             let popupNode = e.popup.getElement();
             let canvas = popupNode.querySelector(".mentionChart");
 
-            renderMentionChart(validEntries, canvas);
+            // pass the feature name rather than the array of rows
+            renderMentionChart(name, canvas);
 
           });
           layer.addTo(osmLayerGroup);
@@ -551,20 +615,26 @@ function loadOSMFeatures() {
 
         let layer = L.geoJSON(data, {
 
+          // only include features once the slider has reached their first mention year
+          filter: function(feature) {
+            let name = feature.properties?.name;
+            let entries = metadata[name];
+            if (!entries) return false; // drop features without any metadata
+            // determine first mention year
+            let years = entries
+              .map(e => parseInt(e.Year))
+              .filter(y => !isNaN(y));
+            if (years.length === 0) return false;
+            let firstYear = Math.min(...years);
+            return currentYear >= firstYear;
+          },
+
           style: function(feature) {
 
             let name = feature.properties?.name;
             let entries = metadata[name];
 
-            if (!entries) {
-              return {
-                color: COLORS.certain,
-                weight: 2,
-                opacity: 0.15,
-                fillOpacity: 0.1
-              };
-            }
-
+            // at this point filter ensures entries exist and firstYear <= currentYear
             let temporal = getFeatureTemporalState(entries);
 
             let validEntries = entries.filter(e =>
@@ -619,6 +689,12 @@ function loadOSMFeatures() {
             if (validEntries.length === 0) return;
 
             layer.bindPopup(buildPopupContent(validEntries));
+
+            layer.on("popupopen", function(e) {
+              let popupNode = e.popup.getElement();
+              let canvas = popupNode.querySelector(".mentionChart");
+              renderMentionChart(name, canvas);
+            });
           }
 
         });
@@ -667,6 +743,12 @@ function plotUnmatchedPoints() {
       );
 
       marker.bindPopup(buildPopupContent(metadata[row.Entity]));
+      // draw chart when popup opens
+      marker.on("popupopen", function(e) {
+        let popupNode = e.popup.getElement();
+        let canvas = popupNode.querySelector(".mentionChart");
+        renderMentionChart(row.Entity, canvas);
+      });
       marker.addTo(pointLayer);
     }
 
