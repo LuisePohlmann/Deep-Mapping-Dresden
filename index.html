@@ -1,780 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <title>Deep Mapping Dresden</title>
 
+  <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- PapaParse -->
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
-  <script src="/config.js"></script>
+
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+  <!-- Config (API keys, tokens) -->
+  <script src="js/config.js"></script>
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/custom.css"/>
+
+  <!-- Main scripts -->
+  <script src="js/functions.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
 
 <header class="site-header">
   <div class="header-title">Deep Mapping Dresden - Travelogues 1604-1900 </div>
-
   <nav class="header-nav">
     <a href="about.html"><b>About</b></a>
   </nav>
 </header>
 
-<div id="map"></div>
+<div id="content-wrapper">
+  <div id="map"></div>
 
-<div id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar">
 
-  <div class="sidebar-section">
-    <div class="sidebar-section-header">Dresden Mentions</div>
-    <div id="dresdenContent"></div>
-  </div>
+    <div class="sidebar-section">
+      <div class="sidebar-content">
+        <div style="margin-top:6px;text-align:center;">Year: <span id="yearLabel">1560</span></div>
+        <input type="range" id="yearSlider" step="1" style="width:95%;">
+        <div id="timelineTicks" style="position: relative; height:25px; margin-top:6px;"></div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-content">
+        <div style="display:flex; align-items:center; gap:6px; margin-bottom:10px;">
+          <div style="width:15px; height:15px; border-radius:50%; background:#084808; opacity:0.7; border:1px solid #084808; margin-left:1rem;"></div>
+          <span style="font-size:13px; margin-left:0.5rem;">certain of location <br>(historical and modern names match)</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <div style="width:15px; height:15px; border-radius:50%; background:#FFA500; opacity:0.7; border:1px solid #FFA500; margin-left:1rem;"></div>
+          <span style="font-size:13px; margin-left:0.5rem;">unsure of location <br>(historical name cannot be certainly matched)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-header">Dresden Mentions</div>
+      <div id="dresdenContent" class="sidebar-content"></div>
+    </div>
+
+  </aside>
 </div>
 
-<script>
-
-const COLORS = {
-  certain: "#084808",
-  uncertain: "#FFA500",
-};
-
-const accessToken = window.JAWG_TOKEN;
-
-var map = L.map('map').setView([51.0504, 13.7373], 14);
-
-var Jawg_Sunny = L.tileLayer(
-  'https://tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.png?access-token={accessToken}',
-  {
-    attribution: '<a href="https://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    minZoom: 0,
-    maxZoom: 22,
-    accessToken: accessToken
-  }
-);
-
-Jawg_Sunny.addTo(map);
-
-let metadata = {};
-let allRows = [];
-let currentYear = 0;
-
-let pointLayer = L.layerGroup().addTo(map);
-let osmLayerGroup = L.layerGroup().addTo(map);
-let osmFeatureLayers = [];
-
-function getColorByCertainty(entries) {
-  if (!entries || entries.length === 0) return COLORS.uncertain;
-
-  // If at least one entry is uncertain → mark as uncertain
-  const hasUncertain = entries.some(e =>
-    (e.Certainty || "").toLowerCase() === "uncertain"
-  );
-
-  return hasUncertain ? COLORS.uncertain : COLORS.certain;
-}
-
-// -----------------------------
-// 0. TIME SLIDER UI
-// -----------------------------
-
-function generateYearTicks(minYear, maxYear) {
-
-  let container = document.getElementById("timelineTicks");
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  for (let y = Math.ceil(minYear / 50) * 50; y <= maxYear; y += 50) {
-
-    let percent = ((y - minYear) / (maxYear - minYear)) * 100;
-
-    let tick = document.createElement("div");
-
-    tick.style.position = "absolute";
-    tick.style.left = percent + "%";
-    tick.style.transform = "translateX(-50%)";
-    tick.style.fontSize = "11px";
-
-    tick.innerText = y;
-
-    container.appendChild(tick);
-  }
-}
-
-let sliderControl = L.control({ position: "topright" });
-
-sliderControl.onAdd = function() {
-  let div = L.DomUtil.create("div", "slider-container");
-
-  div.innerHTML = `
-    <div style="background:white;padding:10px; min-width:160px;">
-      
-    <input type="range" id="yearSlider" step="1" style="width:500px;">
-      <div style="background:white;padding:10px; min-width:420px;">
-
-
-        <!-- 50-year timeline markers -->
-        <div id="timelineTicks"
-            style="
-            position: relative;
-            height:25px;
-            margin-top:6px;
-            ">
-        </div>
-
-            
-        <div style="margin-bottom:8px;">
-          Year: <span id="yearLabel">1560</span>
-        </div>
-
-      </div>
-
-      <!-- Legend -->
-      <div style="display:flex; align-items:center; gap:6px; margin-top:6px;">
-      <div style="display:flex; align-items:center; gap:6px; margin-top:6px;">
-        <div style="
-          width:15px;
-          height:15px;
-          border-radius:50%;
-          background:${COLORS.certain};
-          opacity:0.7;
-          border:1px solid ${COLORS.certain};
-        "></div>
-        <span style="font-size:13px;">
-          certain of location <br>
-          (historical and modern names match)
-        </span>
-      </div>
-
-      <div style="display:flex; align-items:center; gap:6px; margin-top:6px;">
-        <div style="
-          width:15px;
-          height:15px;
-          border-radius:50%;
-          background:${COLORS.uncertain};
-          opacity:0.7;
-          border:1px solid ${COLORS.uncertain};
-        "></div>
-        <span style="font-size:13px;">
-          unsure of location <br>
-          (historical name cannot be certainly matched)
-        </span>
-      </div>
-
-    </div>
-  `;
-
-  // Prevent map dragging when using slider
-  L.DomEvent.disableClickPropagation(div);
-
-  return div;
-};
-
-sliderControl.addTo(map);
-
-// -----------------------------
-// 1. LOAD CSV
-// -----------------------------
-Papa.parse("places_dresden_combined_with_sentences_with_osm_flag.csv", {
-  download: true,
-  header: true,
-  delimiter: "|",
-  complete: function(results) {
-    // -----------------------------
-    // CALCULATE YEAR RANGE
-    // -----------------------------
-    let years = results.data
-      .map(row => parseInt(row.Year))
-      .filter(year => !isNaN(year));
-
-    let minYear = Math.min(...years);
-    let maxYear = Math.max(...years);
-    generateYearTicks(minYear, maxYear);
-
-    let slider = document.getElementById("yearSlider");
-
-    slider.min = minYear;
-    slider.max = maxYear;
-    slider.value = minYear;
-
-    document.getElementById("yearLabel").innerText = minYear;
-
-    currentYear = minYear;
-
-    allRows = results.data;
-
-    results.data.forEach(row => {
-      if (row.Entity) {
-        if (!metadata[row.Entity]) {
-          metadata[row.Entity] = [];
-        }
-        metadata[row.Entity].push(row);
-      }
-    });
-
-    document.getElementById("yearSlider").addEventListener("input", function(e) {
-      currentYear = parseInt(e.target.value);
-      document.getElementById("yearLabel").innerText = currentYear;
-      updateMap();
-    });
-
-    currentYear = parseInt(document.getElementById("yearSlider").value);
-    updateMap();
-  }
-});
-
-function renderMentionChart(entityName, container) {
-
-  if (!container) return;
-
-  let bins = {};
-
-  // allow callers to send either a name string or the array of entries
-  let entityLower;
-  if (Array.isArray(entityName)) {
-    if (entityName.length === 0) return;
-    entityLower = (entityName[0].Entity || "").toString().toLowerCase();
-  } else {
-    entityLower = entityName.toString().toLowerCase();
-  }
-
-  // Use your already loaded CSV data
-  allRows.forEach(row => {
-
-    if (!row.Entity) return;
-
-    if (row.Entity.toLowerCase() !== entityLower) return;
-
-    let year = parseInt(row.Year);
-    if (isNaN(year)) return;
-
-    let bin = Math.floor(year / 50) * 50;
-
-    bins[bin] = (bins[bin] || 0) + 1;
-  });
-
-  let labels = Object.keys(bins).sort((a,b)=>a-b);
-  let values = labels.map(l => bins[l]);
-
-  new Chart(container, {
-    type: "bar",
-    data: {
-      labels: labels,
-      datasets: [{
-        data: values
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { display: false }
-      },
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: {
-            precision: 0
-          }
-        }
-      }
-    }
-  });
-}
-
-// -----------------------------
-// 2. POPUP BUILDER
-// -----------------------------
-function buildPopupContent(entries) {
-
-  if (!entries || entries.length === 0) {
-    return "<b>No metadata available</b>";
-  }
-  
-
-  let html = `<div class="popup-title">${entries[0].geocode_query}</div>`;
-
-  entries.forEach((data, index) => {
-
-  html += `
-  <canvas class="mentionChart" height="120"></canvas>
-    <div class="popup-entry">
-      <div class="popup-subtitle">
-        ${data.Author || ""} (${data.Year ? parseInt(data.Year) : ""})
-      </div>
-
-      <div><i>${data["historical spelling"] || ""}</i></div>
-
-      <div class="popup-meta">
-        <div class="popup-row">
-          <div class="popup-label">Quote</div>
-          <div class="popup-value"><i>${data["Full Sentence"] || ""}</i></div>
-        </div>
-
-        <div class="popup-row">
-          <div class="popup-label">Title</div>
-          <div class="popup-value">${data.Title || ""}</div>
-        </div>
-
-        <div class="popup-row">
-          <div class="popup-label">Journey Time</div>
-          <div class="popup-value">${data["Travel Period"] || ""}</div>
-        </div>
-
-        <div class="popup-row">
-          <div class="popup-label">Page</div>
-          <div class="popup-value">${data.Pages || ""}</div>
-        </div>
-
-        ${
-          data.Link
-            ? `
-        <div class="popup-row">
-          <div class="popup-label">Source</div>
-          <div class="popup-value">
-            <a href="${data.Citable_URL}" target="_blank">Open on data provider's page</a>
-          </div>
-        </div>`
-            : ""
-        }
-      </div>
-    </div>
-    ${index < entries.length - 1 ? "<hr>" : ""}
-  `;
-  });
-
-  return `<div class="popup-scroll-container">${html}</div>`;
-}
-
-// -----------------------------
-// 3. UPDATE MAP BASED ON YEAR
-// -----------------------------
-function updateMap() {
-
-  pointLayer.clearLayers();
-  osmLayerGroup.clearLayers();
-
-  // recalc which boundaries should be visible
-  updateBoundaries();
-
-  // Load OSM layers first
-  loadOSMFeatures();
-
-  // Wait a bit for data to load
-  setTimeout(() => {
-    plotUnmatchedPoints();
-    renderDresdenSidebar();
-  }, 300);
-}
-
-// -----------------------------
-// HISTORICAL CITY BOUNDARIES
-// -----------------------------
-// four layers: two for the 1529 walls, two for the post‑1750 walls.
-let boundaryLayers = {
-  altstadt1529: null,
-  neustadt1529: null,
-  altstadt1750: null,
-  neustadt1750: null
-};
-
-const boundaryStyle = {
-  color: "#666666",
-  weight: 2,
-  opacity: 0.7,
-  fillColor: "#999999",
-  fillOpacity: 0.2
-};
-
-// helper to load a geojson file and create a layer
-const boundaryYear = {
-  altstadt1529: 1529,
-  neustadt1529: 1529,
-  altstadt1750: 1750,
-  neustadt1750: 1750
-};
-
-function loadBoundaryLayer(path, targetKey) {
-  fetch(path)
-    .then(res => res.json())
-    .then(data => {
-      let year = boundaryYear[targetKey] || "";
-      let layer = L.geoJSON(data, {
-        style: boundaryStyle,
-        onEachFeature: function(feature, layer) {
-          layer.bindPopup(`Befestigungsanlagen nach Karte von ${year}`);
-        }
-      });
-      boundaryLayers[targetKey] = layer;
-      // add 1529 layers immediately (they should be visible at startup)
-      if (targetKey.endsWith("1529")) {
-        layer.addTo(map);
-      }
-    });
-}
-
-// load all four boundary files
-loadBoundaryLayer("Data/historical_maps_dresden/Wall_Altstadt_1529_mit_Toren.geojson", "altstadt1529");
-loadBoundaryLayer("Data/historical_maps_dresden/Wall_Neustadt_1529_mit_Toren.geojson", "neustadt1529");
-loadBoundaryLayer("Data/historical_maps_dresden/Wall_Altstadt_1750_mit_Toren.geojson", "altstadt1750");
-loadBoundaryLayer("Data/historical_maps_dresden/Wall_Neustadt_1750_mit_Toren.geojson", "neustadt1750");
-
-// call this whenever the slider year changes
-function updateBoundaries() {
-  if (currentYear < 1750) {
-    // show only the 1529 pair
-    if (boundaryLayers.altstadt1529) boundaryLayers.altstadt1529.addTo(map);
-    if (boundaryLayers.neustadt1529) boundaryLayers.neustadt1529.addTo(map);
-    if (boundaryLayers.altstadt1750) map.removeLayer(boundaryLayers.altstadt1750);
-    if (boundaryLayers.neustadt1750) map.removeLayer(boundaryLayers.neustadt1750);
-  } else if (currentYear < 1820) {
-    // show only the post‑1750 pair until they disappear in 1820
-    if (boundaryLayers.altstadt1529) map.removeLayer(boundaryLayers.altstadt1529);
-    if (boundaryLayers.neustadt1529) map.removeLayer(boundaryLayers.neustadt1529);
-    if (boundaryLayers.altstadt1750) boundaryLayers.altstadt1750.addTo(map);
-    if (boundaryLayers.neustadt1750) boundaryLayers.neustadt1750.addTo(map);
-  } else {
-    // from 1820 onward remove all boundary lines
-    Object.values(boundaryLayers).forEach(l => {
-      if (l) map.removeLayer(l);
-    });
-  }
-}
-
-//-------------------------------
-// Dresden in sidebar
-///-------------------------------
-function renderDresdenSidebar() {
-
-  console.log("Dresden entries:", metadata["Dresden"]);
-  console.log("Current year:", currentYear);
-
-  const container = document.getElementById("dresdenContent");
-  container.innerHTML = "";
-
-  let cityKey = Object.keys(metadata).find(k =>
-  k.toLowerCase() === "dresden"
-  );
-
-  // Filter by current slider year
-  let validEntries = metadata[cityKey]
-    .filter(e => !isNaN(parseInt(e.Year)))
-    .filter(e => parseInt(e.Year) <= currentYear)
-    .sort((a, b) => parseInt(a.Year) - parseInt(b.Year)); // chronological order
-
-  if (validEntries.length === 0) {
-    container.innerHTML = "<i>No Dresden mentions up to this year.</i>";
-    return;
-  }
-
-  container.innerHTML = buildPopupContent(validEntries);
-}
-
-function getFeatureTemporalState(entries) {
-
-  if (!entries || entries.length === 0) {
-    return {
-      opacity: 0,
-      firstYear: null
-    };
-  }
-
-  let years = entries
-    .map(e => parseInt(e.Year))
-    .filter(y => !isNaN(y));
-
-  if (years.length === 0) {
-    return {
-      opacity: 0,
-      firstYear: null
-    };
-  }
-
-  let firstYear = Math.min(...years);
-
-  // Feature should appear only after first mention
-  if (currentYear < firstYear) {
-    return {
-      opacity: 0,
-      firstYear: firstYear
-    };
-  }
-
-  // Fade after appearance
-  let age = currentYear - firstYear;
-  let maxFade = 80;
-
-  let opacity = 1 - (age / maxFade);
-
-  return {
-    opacity: Math.max(0.15, Math.min(1, opacity)),
-    firstYear: firstYear
-  };
-}
-
-// -----------------------------
-// 5. LOAD OSM FEATURES (Filtered)
-// -----------------------------
-function loadGeoJSON(file, baseStyle) {
-  fetch(file)
-    .then(res => res.json())
-    .then(data => {
-
-      L.geoJSON(data, {
-        style: function(feature) {
-
-          let name = feature.properties.name;
-          let entries = metadata[name];
-
-          if (!entries) return baseStyle;
-
-          let validEntries = entries.filter(e =>
-            parseInt(e.Year) <= currentYear
-          );
-
-          if (validEntries.length === 0) return baseStyle;
-
-          let dynamicColor = getColorByCertainty(validEntries);
-
-          return {
-            ...baseStyle,
-            color: dynamicColor,
-            fillColor: dynamicColor
-          };
-        },
-
-        onEachFeature: function(feature, layer) {
-
-          let name = feature.properties.name;
-          let entries = metadata[name];
-
-          if (!entries) return;
-
-          let validEntries = entries.filter(e =>
-            parseInt(e.Year) <= currentYear
-          );
-
-          if (validEntries.length === 0) return;
-
-          layer.bindPopup(buildPopupContent(validEntries));
-
-          layer.on("popupopen", function(e) {
-
-            let popupNode = e.popup.getElement();
-            let canvas = popupNode.querySelector(".mentionChart");
-
-            // pass the feature name rather than the array of rows
-            renderMentionChart(name, canvas);
-
-          });
-          layer.addTo(osmLayerGroup);
-        }
-      });
-    });
-}
-
-function getFeatureOpacity(entries) {
-
-  if (!entries || entries.length === 0) return 0.1;
-
-  let years = entries
-    .map(e => parseInt(e.Year))
-    .filter(y => !isNaN(y) && y <= currentYear);
-
-  if (years.length === 0) return 0.1;
-
-  let latestYear = Math.max(...years);
-
-  let age = currentYear - latestYear;
-  let maxFade = 80;
-
-  let opacity = 1 - (age / maxFade);
-
-  return Math.max(0.15, Math.min(1, opacity));
-}
-
-function loadOSMFeatures() {
-
-  const featureFiles = [
-    "osm_features/streets.geojson",
-    "osm_features/buildings.geojson",
-    "osm_features/bridges.geojson",
-    "osm_features/rivers.geojson",
-    "osm_features/squares.geojson",
-    "osm_features/parks.geojson",
-    "osm_features/water.geojson",
-    "osm_features/historic_buildings.geojson",
-    //"osm_features/districts.geojson",
-  ];
-
-  featureFiles.forEach(file => {
-
-    fetch(file)
-      .then(res => res.json())
-      .then(data => {
-
-        let layer = L.geoJSON(data, {
-
-          // only include features once the slider has reached their first mention year
-          filter: function(feature) {
-            let name = feature.properties?.name;
-            let entries = metadata[name];
-            if (!entries) return false; // drop features without any metadata
-            // determine first mention year
-            let years = entries
-              .map(e => parseInt(e.Year))
-              .filter(y => !isNaN(y));
-            if (years.length === 0) return false;
-            let firstYear = Math.min(...years);
-            return currentYear >= firstYear;
-          },
-
-          style: function(feature) {
-
-            let name = feature.properties?.name;
-            let entries = metadata[name];
-
-            // at this point filter ensures entries exist and firstYear <= currentYear
-            let temporal = getFeatureTemporalState(entries);
-
-            let validEntries = entries.filter(e =>
-              parseInt(e.Year) <= currentYear
-            );
-
-            let dynamicColor = getColorByCertainty(validEntries);
-            let dynamicOpacity = temporal.opacity;
-
-            return {
-              color: dynamicColor,
-              weight: 2,
-              opacity: dynamicOpacity,
-              fillColor: dynamicColor,
-              fillOpacity: dynamicOpacity * 0.6
-            };
-          },
-
-          pointToLayer: function(feature, latlng) {
-
-            let name = feature.properties?.name;
-            let entries = metadata[name] || [];
-
-            let validEntries = entries.filter(e =>
-              parseInt(e.Year) <= currentYear
-            );
-
-            let dynamicColor = getColorByCertainty(validEntries);
-            let dynamicOpacity = getFeatureOpacity(validEntries);
-
-            return L.circleMarker(latlng, {
-              radius: 8,
-              color: dynamicColor,
-              fillColor: dynamicColor,
-              fillOpacity: dynamicOpacity,
-              opacity: dynamicOpacity,
-              weight: 1
-            });
-          },
-
-          onEachFeature: function(feature, layer) {
-
-            let name = feature.properties?.name;
-            let entries = metadata[name];
-
-            if (!entries) return;
-
-            let validEntries = entries.filter(e =>
-              parseInt(e.Year) <= currentYear
-            );
-
-            if (validEntries.length === 0) return;
-
-            layer.bindPopup(buildPopupContent(validEntries));
-
-            layer.on("popupopen", function(e) {
-              let popupNode = e.popup.getElement();
-              let canvas = popupNode.querySelector(".mentionChart");
-              renderMentionChart(name, canvas);
-            });
-          }
-
-        });
-
-        osmFeatureLayers.push(layer);
-        layer.addTo(osmLayerGroup);
-
-      });
-
-  });
-}
-
-
-// -----------------------------
-// 6. UNMATCHED POINTS
-// -----------------------------
-function plotUnmatchedPoints() {
-
-  allRows.forEach(row => {
-
-    if (row.Entity === "Dresden") return;
-
-    if ((row.osm_feature_found === "False" || row.osm_feature_found === false)
-        && row.latitude && row.longitude) {
-
-      if (parseInt(row.Year) > currentYear) return;
-
-      let entries = metadata[row.Entity] || [];
-      let validEntries = entries.filter(e =>
-        parseInt(e.Year) <= currentYear
-      );
-
-      let dynamicColor = getColorByCertainty(validEntries);
-      let dynamicOpacity = getFeatureOpacity(validEntries);
-
-      let marker = L.circleMarker(
-        [parseFloat(row.latitude), parseFloat(row.longitude)],
-        {
-          radius: 8,
-          color: dynamicColor,
-          fillColor: dynamicColor,
-          fillOpacity: dynamicOpacity,
-          opacity: dynamicOpacity,
-          weight: 1
-        }
-      );
-
-      marker.bindPopup(buildPopupContent(metadata[row.Entity]));
-      // draw chart when popup opens
-      marker.on("popupopen", function(e) {
-        let popupNode = e.popup.getElement();
-        let canvas = popupNode.querySelector(".mentionChart");
-        renderMentionChart(row.Entity, canvas);
-      });
-      marker.addTo(pointLayer);
-    }
-
-  });
-
-}
-
-</script>
-
-</body>
 <footer class="site-footer">
   <div class="footer-content">
-
     <div>
-      <strong>Deep Mapping Dresden</strong><br>
-      Travelogues 1604–1900
+      <strong>Deep Mapping Dresden</strong>- Travelogues 1604–1900
     </div>
-
     <div>
-        See project on <a href="https://github.com/LuisePohlmann/Deep-Mapping-Dresden/">Github</a>
+      See project on <a href="https://github.com/LuisePohlmann/Deep-Mapping-Dresden/">Github</a>
     </div>
-
     <div>
       © Luise Pohlmann, 2026
     </div>
-
   </div>
 </footer>
+
+</body>
 </html>

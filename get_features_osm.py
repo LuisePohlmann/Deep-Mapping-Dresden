@@ -5,40 +5,69 @@ from rapidfuzz import process, fuzz
 # -------------------------
 # Load input CSV
 # -------------------------
-df = pd.read_csv("Data/Geolocation_Metadata/places_dresden_combined_with_sentences.csv", sep="|")
+df = pd.read_excel("Data/Data_hand_normalized.xlsx")
+df = df.dropna(subset=["Entity_normed"])
+df = df[df["Entity_normed"] != "Dresden"]
+df = df[df["Entity_normed"] != "Sachsens"]
 
 PLACE_NAME = "Dresden, Germany"
+# Get city center point
+city_point = ox.geocode(PLACE_NAME)
+
+# radius in meters
+SEARCH_RADIUS = 15000
 
 # Keep track of all found entity names
 found_entities = set()
 
-#--------------------------
-# Fuzzy matching
-#--------------------------
-def fuzzy_match_entities(query_list, candidate_list, threshold=80):
+# -------------------------
+# Safe export helper
+# -------------------------
+def safe_export(gdf, csv_path, geojson_path):
     """
-    Fuzzy matches historical spellings to OSM names.
-
-    Returns list of matched names.
+    Prevents 'ValueError: cannot convert float NaN to integer'
+    by converting problematic columns before saving.
     """
 
-    matches = []
+    if gdf is None or len(gdf) == 0:
+        print(f"Skipping export: {geojson_path} (empty dataset)")
+        return
 
-    for query in query_list:
+    gdf = gdf.copy()
 
-        if pd.isna(query):
-            continue
+    # Convert integer columns with NaN to float
+    for col in gdf.columns:
+        if pd.api.types.is_integer_dtype(gdf[col]):
+            gdf[col] = gdf[col].astype("float")
 
-        result = process.extractOne(
-            query,
-            candidate_list,
-            scorer=fuzz.token_sort_ratio
-        )
+    # Fill object NaNs with empty string (safer for GeoJSON)
+    obj_cols = gdf.select_dtypes(include=["object"]).columns
+    gdf[obj_cols] = gdf[obj_cols].fillna("")
 
-        if result and result[1] >= threshold:
-            matches.append(result[0])
+    # Save
+    gdf.to_csv(csv_path)
+    gdf.to_file(geojson_path, driver="GeoJSON")
 
-    return list(set(matches))
+# -------------------------
+# SURROUNDING TOWNS / VILLAGES
+# -------------------------
+town_tags = {
+    "place": ["town", "village", "city"]
+}
+
+towns = ox.features_from_point(city_point, town_tags, dist=SEARCH_RADIUS)
+
+if "name" in towns.columns:
+    towns = towns[towns["name"].isin(df["Entity_normed"])]
+    found_entities.update(towns["name"].unique())
+
+safe_export(
+    towns,
+    "osm_features/towns.csv",
+    "osm_features/towns.geojson"
+)
+
+print("Towns / villages found:", len(towns))
 
 # -------------------------
 # STREET NETWORK (edges)
@@ -47,14 +76,39 @@ graph = ox.graph_from_place(PLACE_NAME)
 nodes, edges = ox.graph_to_gdfs(graph)
 
 edges = edges[edges["name"].notna()]
-streets = edges[edges["name"].isin(df["geocode_query"])]
+streets = edges[edges["name"].isin(df["Entity_normed"])]
 
 found_entities.update(streets["name"].unique())
 
-streets.to_csv("osm_features/streets.csv")
-streets.to_file("osm_features/streets.geojson", driver="GeoJSON")
+safe_export(
+    streets,
+    "osm_features/streets.csv",
+    "osm_features/streets.geojson"
+)
 
 print("Streets found:", len(streets))
+
+# -------------------------
+# CHURCHES
+# -------------------------
+church_tags = {
+    "amenity": "place_of_worship",
+    "building": ["church", "chapel", "cathedral"]
+}
+
+churches = ox.features_from_place(PLACE_NAME, church_tags)
+
+if "name" in churches.columns:
+    churches = churches[churches["name"].isin(df["Entity_normed"])]
+    found_entities.update(churches["name"].unique())
+
+safe_export(
+    churches,
+    "osm_features/churches.csv",
+    "osm_features/churches.geojson"
+)
+
+print("Churches found:", len(churches))
 
 # -------------------------
 # SQUARES
@@ -63,11 +117,14 @@ square_tags = {"place": "square"}
 squares = ox.features_from_place(PLACE_NAME, square_tags)
 
 if "name" in squares.columns:
-    squares = squares[squares["name"].isin(df["geocode_query"])]
+    squares = squares[squares["name"].isin(df["Entity_normed"])]
     found_entities.update(squares["name"].unique())
 
-squares.to_csv("osm_features/squares.csv")
-squares.to_file("osm_features/squares.geojson", driver="GeoJSON")
+safe_export(
+    squares,
+    "osm_features/squares.csv",
+    "osm_features/squares.geojson"
+)
 
 print("Squares found:", len(squares))
 
@@ -78,11 +135,14 @@ bridge_tags = {"bridge": True}
 bridges = ox.features_from_place(PLACE_NAME, bridge_tags)
 
 if "name" in bridges.columns:
-    bridges = bridges[bridges["name"].isin(df["geocode_query"])]
+    bridges = bridges[bridges["name"].isin(df["Entity_normed"])]
     found_entities.update(bridges["name"].unique())
 
-bridges.to_csv("osm_features/bridges.csv")
-bridges.to_file("osm_features/bridges.geojson", driver="GeoJSON")
+safe_export(
+    bridges,
+    "osm_features/bridges.csv",
+    "osm_features/bridges.geojson"
+)
 
 print("Bridges found:", len(bridges))
 
@@ -93,12 +153,14 @@ building_tags = {"building": True}
 buildings = ox.features_from_place(PLACE_NAME, building_tags)
 
 if "name" in buildings.columns:
-    buildings = buildings[buildings["name"].isin(df["geocode_query"])]
+    buildings = buildings[buildings["name"].isin(df["Entity_normed"])]
     found_entities.update(buildings["name"].unique())
 
-buildings.to_csv("osm_features/buildings.csv")
-buildings.to_file("osm_features/buildings.geojson", driver="GeoJSON")
-
+safe_export(
+    buildings,
+    "osm_features/buildings.csv",
+    "osm_features/buildings.geojson"
+)
 print("Buildings found:", len(buildings))
 
 # -------------------------
@@ -120,10 +182,10 @@ if "name" in historic_buildings.columns:
     # Fuzzy matching will be applied later (do NOT filter strictly here)
     found_entities.update(historic_buildings["name"].dropna().unique())
 
-historic_buildings.to_csv("osm_features/historic_buildings.csv")
-historic_buildings.to_file(
-    "osm_features/historic_buildings.geojson",
-    driver="GeoJSON"
+safe_export(
+    historic_buildings,
+    "osm_features/historic_buildings.csv",
+    "osm_features/historic_buildings.geojson"
 )
 
 print("Historic buildings found:", len(historic_buildings))
@@ -135,11 +197,14 @@ river_tags = {"waterway": ["river", "stream", "canal"]}
 rivers = ox.features_from_place(PLACE_NAME, river_tags)
 
 if "name" in rivers.columns:
-    rivers = rivers[rivers["name"].isin(df["geocode_query"])]
+    rivers = rivers[rivers["name"].isin(df["Entity_normed"])]
     found_entities.update(rivers["name"].unique())
 
-rivers.to_csv("osm_features/rivers.csv")
-rivers.to_file("osm_features/rivers.geojson", driver="GeoJSON")
+safe_export(
+    rivers,
+    "osm_features/rivers.csv",
+    "osm_features/rivers.geojson"
+)
 
 print("Rivers found:", len(rivers))
 
@@ -151,11 +216,14 @@ water_tags = {
 water = ox.features_from_place(PLACE_NAME, water_tags)
 
 if "name" in water.columns:
-    water = water[water["name"].isin(df["geocode_query"])]
+    water = water[water["name"].isin(df["Entity_normed"])]
     found_entities.update(water["name"].unique())
 
-water.to_csv("osm_features/water.csv")
-water.to_file("osm_features/water.geojson", driver="GeoJSON")
+safe_export(
+    water,
+    "osm_features/water.csv",
+    "osm_features/water.geojson"
+)
 
 print("Water bodies found:", len(water))
 
@@ -170,11 +238,14 @@ green_tags = {
 parks = ox.features_from_place(PLACE_NAME, green_tags)
 
 if "name" in parks.columns:
-    parks = parks[parks["name"].isin(df["geocode_query"])]
+    parks = parks[parks["name"].isin(df["Entity_normed"])]
     found_entities.update(parks["name"].unique())
 
-parks.to_csv("osm_features/parks.csv")
-parks.to_file("osm_features/parks.geojson", driver="GeoJSON")
+safe_export(
+    parks,
+    "osm_features/parks.csv",
+    "osm_features/parks.geojson"
+)
 
 print("Parks / green areas found:", len(parks))
 
@@ -189,33 +260,32 @@ district_tags = {
 districts = ox.features_from_place(PLACE_NAME, district_tags)
 
 if "name" in districts.columns:
-    districts = districts[districts["name"].isin(df["geocode_query"])]
+    districts = districts[districts["name"].isin(df["Entity_normed"])]
     found_entities.update(districts["name"].unique())
 
-districts.to_csv("osm_features/districts.csv")
-districts.to_file("osm_features/districts.geojson", driver="GeoJSON")
+safe_export(
+    districts,
+    "osm_features/districts.csv",
+    "osm_features/districts.geojson"
+)
 
 print("Districts / neighborhoods found:", len(districts))
 
 # -------------------------
-# Add OSM match column to copy of CSV
+# Add OSM match column to CSV
 # -------------------------
-all_osm_names = list(found_entities)
-df_unique_queries = df["geocode_query"].dropna().unique()
+all_osm_names = set(found_entities)
 
-fuzzy_matches = fuzzy_match_entities(
-    df_unique_queries,
-    all_osm_names,
-    threshold=85   # increase = stricter matching
+df["osm_feature_found"] = df["Entity_normed"].isin(all_osm_names)
+
+df.to_csv(
+    "places_dresden_combined_with_sentences_with_osm_flag.csv",
+    index=False,
+    sep="|"
 )
 
-df["osm_feature_found"] = df["geocode_query"].apply(
-    lambda x: x in fuzzy_matches
-)
-
-df.to_csv("places_dresden_combined_with_sentences_with_osm_flag.csv", index=False, sep="|")
-
-print("Matched entities:", len(found_entities))
+print("Matched entities:", len(all_osm_names))
+print("Rows with OSM match:", df["osm_feature_found"].sum())
 print("Updated CSV saved as places_dresden_combined_with_sentences_with_osm_flag.csv")
 
 print("All boundaries exported successfully.")
