@@ -15,7 +15,7 @@ window.osmLayerGroup = L.layerGroup().addTo(map);
 window.osmFeatureLayers = [];
 
 // Load CSV
-Papa.parse("places_dresden_combined_with_sentences_with_osm_flag.csv", {
+Papa.parse("Data/places_dresden_combined_with_sentences_with_osm_flag.csv", {
   download: true,
   header: true,
   delimiter: "|",

@@ -14,6 +14,20 @@ body {
   margin: 0;
 }
 
+/* About page should grow with its content (footer follows content) */
+body.about-page {
+  display: block;
+  height: auto;
+}
+
+body.about-page main {
+  flex: none;
+}
+
+body.about-page .about-container {
+  height: auto;
+}
+
 #content-wrapper {
   display: flex;
   flex: 1;
@@ -28,7 +42,6 @@ body {
   height:100%;
   width: calc(100% - 320px);
   margin-right: 320px;
-  margin-top: 60px;
   margin-bottom: 50px;
   flex:1;
 }
@@ -55,7 +68,7 @@ body {
 .header-nav a {
   color: #006400;
   text-decoration: none;
-  margin-right: 320px;
+  margin-right: 360px;
   font-size: 16px;
 }
 
@@ -135,8 +148,8 @@ body {
 .sidebar {
   position: fixed;
   right: 0;
-  top: 60px;
-  height: calc(100vh - 100px);
+  top: 0;
+  height: 100vh;
   width: 320px;
   margin-bottom: 50px;
   background-color: white;
@@ -148,15 +161,19 @@ body {
   flex-direction: column;
   z-index: 1000;
   font-family: Arial, Helvetica, sans-serif;
-  overflow-y: auto
-};
+}
 
 .sidebar-section {
   display: flex;
   padding:10px;
   flex-direction: column;
   flex: 0 0 auto;   /* sections take natural height */
-  padding-bottom: 2rem;
+}
+
+.sidebar-section:last-child {
+  flex: 1;
+  overflow: hidden;
+  padding-bottom: 0;
 }
 
 .sidebar input[type="range"] {
@@ -183,7 +200,6 @@ body {
   background: #006400;
   color: white;
   border-bottom: 1px solid #ddd;
-  margin-top:2rem;
 }
 
 .sidebar-content {

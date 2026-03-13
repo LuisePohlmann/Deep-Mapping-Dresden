@@ -83,7 +83,7 @@ function renderMentionChart(entityName, container) {
   if (!container || !allRows) return;
   let bins = {};
   let entityLower = Array.isArray(entityName)
-    ? (entityName[0].Entity || "").toLowerCase()
+    ? (entityName[0].Entity_normed || "").toLowerCase()
     : entityName.toLowerCase();
   allRows.forEach(row => {
     if (!row.Entity_normed) return;
@@ -187,14 +187,7 @@ function renderDresdenSidebar() {
   container.innerHTML = "";
 
   // Collect all entries where Entity_normed is "Dresden"
-  let validEntries = [];
-  Object.values(metadata).forEach(entries => {
-    entries.forEach(e => {
-      if ((e.Entity_normed || "").toLowerCase() === "dresden") {
-        validEntries.push(e);
-      }
-    });
-  });
+  let validEntries = allRows.filter(e => (e.Entity_normed || "") === "Dresden");
 
   // Filter by current year
   validEntries = validEntries
@@ -208,6 +201,12 @@ function renderDresdenSidebar() {
   }
 
   container.innerHTML = buildPopupContent(validEntries);
+
+  // Render the mention chart
+  let canvas = container.querySelector(".mentionChart");
+  if (canvas && validEntries.length > 0) {
+    renderMentionChart(validEntries[0].Entity_normed || validEntries[0].Entity, canvas);
+  }
 }
 
 // -----------------------------
@@ -215,14 +214,14 @@ function renderDresdenSidebar() {
 // -----------------------------
 function loadOSMFeatures(){
   const featureFiles=[
-    "osm_features/streets.geojson","osm_features/churches.geojson","osm_features/buildings.geojson",
-    "osm_features/bridges.geojson","osm_features/squares.geojson",
-    "osm_features/parks.geojson","osm_features/historic_buildings.geojson",
-    "osm_features/districts.geojson","osm_features/towns.geojson"
-    //"osm_features/rivers.geojson","osm_features/water.geojson",
+    "Data/osm_features/streets.geojson","Data/osm_features/churches.geojson","Data/osm_features/buildings.geojson",
+    "Data/osm_features/bridges.geojson","Data/osm_features/squares.geojson",
+    "Data/osm_features/parks.geojson","Data/osm_features/historic_buildings.geojson",
+    "Data/osm_features/districts.geojson","Data/osm_features/towns.geojson"
+    //"Data/osm_features/rivers.geojson","Data/osm_features/water.geojson",
   ];
 
-    const excludedEntities = ["Sachsens", "Sachsen"];
+  const excludedEntities = ["Sachsens", "Sachsen", "Dresden"];
 
   featureFiles.forEach(file=>{
     fetch(file).then(res=>res.json()).then(data=>{
@@ -295,10 +294,10 @@ function loadOSMFeatures(){
 // -----------------------------
 function plotUnmatchedPoints(){
   allRows.forEach(row=>{
-    if(row.Entity==="Dresden") return;
+    if(row.Entity_normed==="Dresden") return;
     if((row.osm_feature_found==="False"||row.osm_feature_found===false) && row.latitude && row.longitude){
       if(parseInt(row.Year)>currentYear) return;
-      let entries = metadata[row.Entity]||[];
+      let entries = metadata[row.Entity_normed]||[];
       let validEntries = entries.filter(e=>parseInt(e.Year)<=currentYear);
       validEntries.forEach((entry,i)=>{
         let lat=parseFloat(row.latitude), lng=parseFloat(row.longitude);
@@ -308,7 +307,7 @@ function plotUnmatchedPoints(){
         marker.bindPopup(buildPopupContent([entry]));
         marker.on("popupopen", e=>{
           let canvas = e.popup.getElement().querySelector(".mentionChart");
-          renderMentionChart(row.Entity, canvas);
+          renderMentionChart(row.Entity_normed, canvas);
         });
         marker.addTo(pointLayer);
       });
