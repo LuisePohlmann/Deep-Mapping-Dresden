@@ -36,38 +36,38 @@ function generateYearTicks(minYear, maxYear) {
 // 3. POPUPS & CHARTS
 // -----------------------------
 function buildPopupContent(entries) {
-  if (!entries || entries.length === 0) return "<b>No metadata available</b>";
+  if (!entries || entries.length === 0) return `<b>${t("noMetadata")}</b>`;
   let html = `<div class="popup-title">${entries[0].geocode_query || ""}</div>`;
   entries.forEach((data, index) => {
     html += `${index === 0 ? `<canvas class="mentionChart" height="120"></canvas>` : ""}
       <div class="popup-entry">
         <div class="popup-subtitle">
-          ${data.Author === "Kein Eintrag vorhanden" ? "Author unknown" : data.Author || ""} (${data.Year || ""})
+          ${data.Author === "Kein Eintrag vorhanden" ? t("authorUnknown") : data.Author || ""} (${data.Year || ""})
         </div>
         <div><i>${data["historical spelling"] || ""}</i></div>
         <div class="popup-meta">
           <div class="popup-row">
-            <div class="popup-label">Quote</div>
+            <div class="popup-label">${t("quote")}</div>
             <div class="popup-value"><i>${data["Full Sentence"] || ""}</i></div>
           </div>
           <div class="popup-row">
-            <div class="popup-label">Title</div>
+            <div class="popup-label">${t("title")}</div>
             <div class="popup-value">${data.Title || ""}</div>
           </div>
           <div class="popup-row">
-            <div class="popup-label">Journey Time</div>
+            <div class="popup-label">${t("journeyTime")}</div>
             <div class="popup-value">${data["Travel Period"] || ""}</div>
           </div>
           <div class="popup-row">
-            <div class="popup-label">Page</div>
+            <div class="popup-label">${t("page")}</div>
             <div class="popup-value">${data.Pages || ""}</div>
           </div>
           ${
             data.Link
               ? `<div class="popup-row">
-                   <div class="popup-label">Source</div>
+                   <div class="popup-label">${t("source")}</div>
                    <div class="popup-value">
-                     <a href="${data.Citable_URL}" target="_blank">Open on data provider's page</a>
+                     <a href="${data.Citable_URL}" target="_blank">${t("openSource")}</a>
                    </div>
                  </div>`
               : ""
@@ -151,7 +151,7 @@ const boundaryYear = { altstadt1529:1529, neustadt1529:1529, altstadt1750:1750, 
 function loadBoundaryLayer(path, key){
   fetch(path).then(r=>r.json()).then(data=>{
     let year = boundaryYear[key] || "";
-    let layer = L.geoJSON(data,{style:boundaryStyle,onEachFeature:(f,l)=>l.bindPopup(`Befestigungsanlagen nach Karte von ${year}`)});
+    let layer = L.geoJSON(data,{style:boundaryStyle,onEachFeature:(f,l)=>l.bindPopup(`${t("boundaryPopup")} ${year}`)});
     boundaryLayers[key]=layer;
     if(key.endsWith("1529")) layer.addTo(map);
   });
@@ -171,6 +171,16 @@ function updateBoundaries(){
   } else {
     Object.values(boundaryLayers).forEach(l=>{if(l) map.removeLayer(l)});
   }
+}
+
+function updateBoundaryPopupText() {
+  Object.entries(boundaryLayers).forEach(([key, layer]) => {
+    if (!layer) return;
+    const year = boundaryYear[key] || "";
+    layer.eachLayer(boundaryLayer => {
+      boundaryLayer.bindPopup(`${t("boundaryPopup")} ${year}`);
+    });
+  });
 }
 
 // Initialize boundaries
@@ -196,7 +206,7 @@ function renderDresdenSidebar() {
     .sort((a, b) => parseInt(a.Year) - parseInt(b.Year)); // chronological order
 
   if (validEntries.length === 0) {
-    container.innerHTML = "<i>No Dresden mentions up to this year.</i>";
+    container.innerHTML = `<i>${t("noDresdenMentions")}</i>`;
     return;
   }
 

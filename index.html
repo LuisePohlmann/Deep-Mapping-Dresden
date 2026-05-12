@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Deep Mapping Dresden</title>
 
   <!-- Leaflet -->
@@ -16,6 +17,7 @@
 
   <!-- Config (API keys, tokens) -->
   <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/custom.css"/>
@@ -27,9 +29,9 @@
 <body>
 
 <header class="site-header">
-  <div class="header-title">Deep Mapping Dresden - Travelogues 1604-1900 </div>
+  <div class="header-title">Deep Mapping Dresden</div>
   <nav class="header-nav">
-    <a href="about.html"><b>About</b></a>
+    <a href="about.html"><b data-i18n="about">Info</b></a>
   </nav>
 </header>
 
@@ -40,7 +42,7 @@
 
     <div class="sidebar-section">
       <div class="sidebar-content">
-        <div style="margin-top:6px;text-align:center;">Year: <span id="yearLabel">1560</span></div>
+        <div style="margin-top:6px;text-align:center;"><span data-i18n="year">Jahr</span>: <span id="yearLabel">1560</span></div>
         <input type="range" id="yearSlider" step="1" style="width:95%;">
         <div id="timelineTicks" style="position: relative; height:25px; margin-top:6px;"></div>
       </div>
@@ -50,17 +52,17 @@
       <div class="sidebar-content">
         <div style="display:flex; align-items:center; gap:6px; margin-bottom:10px;">
           <div style="width:15px; height:15px; border-radius:50%; background:#084808; opacity:0.7; border:1px solid #084808; margin-left:1rem;"></div>
-          <span style="font-size:13px; margin-left:0.5rem;">certain of location <br>(historical and modern names match)</span>
+          <span style="font-size:13px; margin-left:0.5rem;" data-i18n-html="certainLocation">historischer und moderner Name stimmen überein</span>
         </div>
         <div style="display:flex; align-items:center; gap:6px;">
           <div style="width:15px; height:15px; border-radius:50%; background:#FFA500; opacity:0.7; border:1px solid #FFA500; margin-left:1rem;"></div>
-          <span style="font-size:13px; margin-left:0.5rem;">unsure of location <br>(historical name cannot be certainly matched)</span>
+          <span style="font-size:13px; margin-left:0.5rem;" data-i18n-html="uncertainLocation">historischer Name kann nicht eindeutig zugeordnet werden</span>
         </div>
       </div>
     </div>
 
     <div class="sidebar-section">
-      <div class="sidebar-section-header">Dresden Mentions</div>
+      <div class="sidebar-section-header" data-i18n="dresdenMentions">Dresden-Erwähnungen</div>
       <div id="dresdenContent" class="sidebar-content"></div>
     </div>
 
@@ -70,14 +72,15 @@
 <footer class="site-footer">
   <div class="footer-content">
     <div>
-      <strong>Deep Mapping Dresden</strong>- Travelogues 1604–1900
+      <span data-i18n-html="footerProject"><strong>Deep Mapping Dresden</strong> - Reiseberichte 1604-1900</span>
     </div>
-    <div>
-      See project on <a href="https://github.com/LuisePohlmann/Deep-Mapping-Dresden/">Github</a>
+    <div data-i18n-html="footerGithub">
+      Projekt auf <a href="https://github.com/LuisePohlmann/Deep-Mapping-Dresden/">Github</a> ansehen
     </div>
     <div>
       © Luise Pohlmann, 2026
     </div>
+    <button class="language-toggle" type="button" data-i18n-toggle>English</button>
   </div>
 </footer>
 

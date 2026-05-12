@@ -46,6 +46,11 @@ body.about-page .about-container {
   flex:1;
 }
 
+.leaflet-control-attribution {
+  font-size: 10px;
+  line-height: 1.2;
+}
+
 /* HEADER */
 
 .site-header {
@@ -279,4 +284,194 @@ h2{
 
   font-size: 13px;
   line-height: 1.6;
+}
+
+.language-toggle {
+  border: 1px solid #006400;
+  background: white;
+  color: #006400;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+}
+
+.language-toggle:hover {
+  background: #f2f7f2;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --mobile-header-height: 42px;
+    --mobile-sidebar-height: max(38vh, 260px);
+  }
+
+  html,
+  body {
+    font-size: 18px;
+  }
+
+  body {
+    height: 100vh;
+  }
+
+  .site-header {
+    height: auto;
+    padding: 0.5rem 1rem;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .header-nav a {
+    margin-right: 0;
+    font-size: 18px;
+  }
+
+  #content-wrapper {
+    height: calc(100dvh - var(--mobile-sidebar-height) - var(--mobile-header-height));
+    margin-bottom: var(--mobile-sidebar-height);
+  }
+
+  #map {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .leaflet-control-attribution {
+    font-size: 8px;
+    line-height: 1.1;
+    padding: 0 3px;
+  }
+
+  .sidebar {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: var(--mobile-sidebar-height);
+    min-height: 0;
+    margin-bottom: 0;
+    padding: 0.75rem;
+    border-left: 0;
+    border-top: 2px solid #ccc;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.12);
+    display: grid;
+    grid-template-rows: auto minmax(110px, 1fr);
+    font-size: 16px;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  .sidebar-section {
+    min-height: 0;
+    padding: 6px;
+    overflow: hidden;
+  }
+
+  .sidebar-section:nth-child(2) {
+    display: none;
+  }
+
+  .sidebar-section:last-child {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .sidebar-content {
+    padding: 6px 0;
+  }
+
+  .sidebar-section-header {
+    font-size: 17px;
+    padding: 8px 10px;
+  }
+
+  .sidebar-content,
+  .sidebar-item,
+  .sidebar span,
+  .popup-title,
+  .popup-subtitle,
+  .popup-label,
+  .popup-value,
+  .footer-content {
+    font-size: 16px !important;
+  }
+
+  .sidebar-item {
+    padding: 10px 8px;
+  }
+
+  #dresdenContent {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sidebar-item-info {
+    font-size: 15px;
+  }
+
+  #timelineTicks div {
+    font-size: 13px;
+  }
+
+  .popup-scroll-container {
+    max-height: 45vh;
+  }
+
+  .popup-row {
+    grid-template-columns: 95px 1fr;
+  }
+
+  .site-footer {
+    position: fixed;
+    right: 0.75rem;
+    bottom: var(--mobile-sidebar-height);
+    width: auto;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    z-index: 1100;
+  }
+
+  .footer-content {
+    display: block;
+    line-height: 1;
+  }
+
+  .footer-content > div {
+    display: none;
+  }
+
+  .language-toggle {
+    font-size: 14px;
+    padding: 0.35rem 0.6rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  }
+
+  .about-container {
+    margin: 20px auto;
+    padding: 1rem;
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
 }

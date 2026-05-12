@@ -11,8 +11,8 @@ from collections import Counter
 import matplotlib.pyplot as plt
 import statistics
 
-METADATA_CSV = "metadata.csv"
-IMAGES_DIR = "images"
+METADATA_CSV = "Data/Raw_Metadata/travelogues_full_metadata_with_images.csv"
+IMAGES_DIR = "Data/texts"
 
 
 def count_csv_rows(csv_file):
@@ -20,7 +20,7 @@ def count_csv_rows(csv_file):
     if not os.path.exists(csv_file):
         return 0
     with open(csv_file, 'r', encoding='utf-8-sig') as f:
-        reader = csv.DictReader(f, delimiter=';')
+        reader = csv.DictReader(f, delimiter='|')
         return sum(1 for _ in reader)
 
 
@@ -36,7 +36,7 @@ def count_folders(directory):
 
 def count_total_images(directory):
     """Count total image files across all subdirectories."""
-    image_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tif', '.tiff', '.jp2'}
+    image_extensions = {'.txt'}
     total = 0
     for root, dirs, files in os.walk(directory):
         for file in files:
@@ -51,13 +51,13 @@ def count_authors_and_unique_cite(metadata_csv):
     cite_urls = set()
 
     with open(metadata_csv, 'r', encoding='utf-8-sig') as f:
-        reader = csv.DictReader(f, delimiter=';')
+        reader = csv.DictReader(f, delimiter='|')
         for row in reader:
-            autor = (row.get('Autor') or '').strip()
+            autor = (row.get('Author') or '').strip()
             if autor:
                 authors.append(autor)
 
-            cite = (row.get('Zitierfähige URL') or '').strip()
+            cite = (row.get('Citable URL') or '').strip()
             if cite:
                 cite_urls.add(cite)
 
@@ -75,14 +75,14 @@ def period_distribution_from_metadata(metadata_csv, female_names_file, period=50
     period_counts = {}
 
     with open(metadata_csv, 'r', encoding='utf-8-sig') as f:
-        reader = csv.DictReader(f, delimiter=';')
+        reader = csv.DictReader(f, delimiter='|')
         for row in reader:
-            cite = (row.get('Zitierfähige URL') or '').strip()
+            cite = (row.get('Citable URL') or '').strip()
             if not cite or cite in seen:
                 continue
 
-            pub = (row.get('publikationsdatum') or '').strip()
-            author = (row.get('Autor') or '').strip()
+            pub = (row.get('Year') or '').strip()
+            author = (row.get('Author') or '').strip()
             seen[cite] = (pub, author)
 
     for pub, author in seen.values():
@@ -110,9 +110,9 @@ def period_distribution_from_metadata(metadata_csv, female_names_file, period=50
 def list_unique_authors(metadata_csv):
     authors = set()
     with open(metadata_csv, 'r', encoding='utf-8-sig') as f:
-        reader = csv.DictReader(f, delimiter=';')
+        reader = csv.DictReader(f, delimiter='|')
         for row in reader:
-            autor = (row.get('Autor') or '').strip()
+            autor = (row.get('Author') or '').strip()
             if autor:
                 authors.add(autor)
 
@@ -149,7 +149,7 @@ def plot_page_length_distribution(metadata_csv, outlier_threshold=30):
     outliers = []
 
     with open(metadata_csv, 'r', encoding='utf-8-sig') as f:
-        reader = csv.DictReader(f, delimiter=';')
+        reader = csv.DictReader(f, delimiter='|')
         for row in reader:
             page_str = (row.get('Pages') or '').strip()
             count = parse_page_count(page_str)
@@ -199,7 +199,7 @@ if __name__ == '__main__':
     print(f"Unique authors: {unique_authors}")
     print(f"Unique cite URLs: {unique_cites}")
 
-    periods = period_distribution_from_metadata(METADATA_CSV, "female_names.txt")
+    periods = period_distribution_from_metadata(METADATA_CSV, "Data/Raw_Metadata/female_names.txt")
 
     print("\nEntries per 50-year period:")
     for start, g in periods.items():
